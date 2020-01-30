@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<d/div lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
         <div class="topnav">
             <a class="active" href="#home">Home</a>
@@ -38,7 +39,7 @@
 
     /* Add a color to the active/current link */
     .topnav a.active {
-    background-color: rgb(60, 66, 160);
+    background-color:green;
     color: white;
     } 
   #subject{                   
@@ -54,18 +55,21 @@ height:200px;
   margin-bottom: 16px;
   resize: vertical;
 }
-    input[type=submit] {
+    #submit {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: medium;
 }
-#contact_form{
+#form2{
   border-radius: 5px;
   background-color: #f2f2f2;
-  padding: 100px;
+  padding: 5px;
+  position: relative;
+  bottom: 10px;
 }
 #button{
     background-color: red;
@@ -119,10 +123,11 @@ height:200px;
         </ul>  
 
         <h2>Contact Form</h2>
-        <div id="contact_form">
+        <div id="form2">
+        <div id="contact_form"> </div>
             <onsubmit="return contact_form></onsubmit>
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname"
+            <label for="name">First Name</label>
+            <input type="text" id="name" name="firstname"
             placeholder="Your name">
             <label for="em">Email</label>
             <input type="text" id="em" name="Email"
@@ -144,26 +149,40 @@ height:200px;
 
             <label for="details">Details</label>
             <textarea id="subject" name="details" placeholder="Write something..."></textarea>
-            <input class="formfield" type="submit" value="Submit">
+            <button id="submit">Submit</button>
+            <div id="error"></div>
         </div>
-        <button id="button">Hide Me!</button>
-        <button id="sponge">Show Me!</button>
-
           </div>
-
+          <button id="button">Hide Me!</button>
+          <button id="sponge">Show Me!</button>
       </div>
+    </div>
 
 
     </body>
 
-    <script>
+<script>
         $("#button").click(function(){
-             $("#contact_form").hide(1000);
+             $("#for2").hide(1000);
                 });
 
     $("#sponge").click(function(){
-         $("#contact_form").show(1000);
+         $("#form2").show(1000);
              });
+             
+    $(document).ready(function() {
+    $("#submit").click(function(){
+        var name = $("#name").val();
+        var email = $("#em").val();
+        var details = $("#details").val();
+        $("#error").empty();
+        if (name === '' || email === '') {
+            alert("Please Fill Required Fields");
+            valid = false;
+        } else {
+            console.log('Your information has been received, we will contact you soon');
+        }}
+    );});
 
-    </script>
+ </script>
 
