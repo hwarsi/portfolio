@@ -4,22 +4,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
         <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+
         <div class="topnav">
             <a class="active" href="#home">Home</a>
             <a href="#portfolio.html">Portfolio</a>
             <a href="#contact.html">Contact</a>
             <a href="#about.html">About</a>
-            </div>
+        </div>
+</head>
+
+<body>
     <div id="aboutme">
         <p id ="tom">Full Stack Developer</p>
-        <div>
+    <div>
 
-        </div>
-        </p>
      <div id ="mainintroduction">
         <p id ="introduction">Hi, I'm Haris. Nice to meet you.</p>
         <p id ="subintroduction"> Experienced full stack developer with a high level of proficiency in 
@@ -30,37 +31,31 @@
 
     <div class= "maincolumns">
         <div class="column">
-        <h2 class = "columnheading">Front-end Developer</h2>
-        <img src="https://image.flaticon.com/icons/svg/977/977597.svg" height = "100" width = "220" style="width:50%" class="center">
+            <h2 class = "columnheading">Front-end Developer</h2>
+            <img src="https://image.flaticon.com/icons/svg/977/977597.svg" height = "100" width = "220" style="width:50%" class="center">
             <p class= "textcolumn">I love bringing people's idea to life in the browser. As someone who loves creating things from scratch,
-         I enjoy making simple content structures that are user friendly and has thoughtful interations.
+            I enjoy making simple content structures that are user friendly and has thoughtful interations.
             </p>
             <p class="zf">Languages I know</p>
-            <P class="zf2"> HTML & CSS</P>
-         </div>
+            <p class="zf2"> HTML & CSS</p>
+        </div>
 
         <div class="column">
-        <h2 class = "columnheading">Back-end Developer</h2>
-        <img src="https://image.flaticon.com/icons/svg/2345/2345539.svg" height = "100" width = "220" style="width:50%" class="center">
+            <h2 class = "columnheading">Back-end Developer</h2>
+            <img src="https://image.flaticon.com/icons/svg/2345/2345539.svg" height = "100" width = "220" style="width:50%" class="center">
 
-            <p class= "textcolumn">I excel at compiling and analyze data, creating processes
-                and able to use data to identify areas of opportunity. I enjoy collaborating with Front-end developers to help establish objectives and 
-                write code to enhance user experience.
-            </p>
-            <p class="zf1">Languages I know</p>
-            <P class="zf2"> Python, Javascript, Flask, React</P>
+                <p class= "textcolumn">I excel at compiling and analyze data, creating processes
+                    and able to use data to identify areas of opportunity. I enjoy collaborating with Front-end developers to help establish objectives and 
+                    write code to enhance user experience.
+                </p>
+                <p class="zf1">Languages I know</p>
+                <P class="zf2"> Python, Javascript, Flask, React</p>
          </div>
-
-         </div>
-
     </div>
-</head>
 
-
-<head>
-    <title>Skill Chart</title>
-</head>
-<body>
+    <div>
+        <title>Skill Chart</title>
+    </div>
     <div class="wrapper">
         <h1>Skill Chart</h1>
         <br><br>
@@ -75,9 +70,9 @@
         <div class="line line4">80%</div>
     </div>
 
-
 </body>
 
+<script type="text/javascript" src="{{ url_for('static', filename='js/about.js') }}"></script>
 
 </html>
         
