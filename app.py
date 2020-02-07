@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify, request
-import json
+import json, pymongo
+from model import connectToDB
 
 portfolio_app = Flask(__name__)
 
@@ -44,6 +45,26 @@ def contactform():
     if request.method == 'POST':
         return jsonify('I didnt build post!')
 
+@app.route('/postContactForm', methods=['POST'])
+def postContactForm():
+    #Gets the data sent from frontend  
+    ajax_data = json.loads(request.data) 
+    print(ajax_data)
+
+    # Connect to DB
+    db = connectToDB()
+
+    #Choose collection name
+    contact_data = db.contact_data
+    print(contact_data)
+
+    #Inserts data into database
+    contact_data.insert_one(ajax_data)
+
+    #Returns data to ajax
+    return jsonify({'Success it worked'})
+
+"""
 @portfolio_app.route('/postcontactform', methods=['POST'])
 def postcontactform():
     print ('DATA IS HERE')
@@ -52,6 +73,7 @@ def postcontactform():
     print (frontend_data)
 
     return jsonify('Success! Data has been processed!')
+"""
 
 if __name__ == "___main___":
     portfolio_app.run()
