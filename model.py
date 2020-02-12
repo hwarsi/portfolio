@@ -7,4 +7,5 @@ def connectToDB():
     db = client.portfolio_database #database name
     print(db)
 
+
     return db
