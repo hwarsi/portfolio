@@ -2,9 +2,12 @@ from flask import Flask, render_template, jsonify, request
 import json
 import pymongo
 from model import connectToDB
-import requests
+import requests, traceback
+from flask_wtf import FlaskForm
+from wtforms import SelectField, SubmitField
 
 portfolio_app = Flask(__name__)
+portfolio_app.config['SECRET_KEY'] = 'Thisisasecret!'
 
 @portfolio_app.route("/home", methods=['GET'])
 def homePage():
@@ -77,28 +80,49 @@ def postcontactform():
 
     return jsonify('Success! Data has been processed!')
 """
-@portfolio_app.route('/')
+# Defines your form
+class News_Form(FlaskForm):
+    countryfield = SelectField('country', choices=[('select','Select Country'),('AU','Australia'),('US','United States')])
+    submitBtn = SubmitField('Submit')
 
-def index():
-    return render_template('index.html')
 
-@portfolio_app.route('/news', methods=['POST'])
-def news():
-    nation = request.form['country']
-    print(nation)
+# API call to get news info depending on nation
+def news_api(nation):
     response = requests.get('https://newsapi.org/v2/top-headlines?country='+nation+'&apiKey=1d72bd9f54c147b09615f1cc2fd6ddc8') 
     json_object = response.json()
-    newsSource = json_object['articles'][0]['author']
+
+    newsData = []
     for i in range(0,9):
-        newsSource = json_object['articles'][i]['author']
-        info = json_object['articles'][i]['content']
-        print(newsSource,
-        info)
-    for i in range(0,9):
-        info = json_object['articles'][i]['content']
-        print(info)
-    return render_template('news.html', source=newsSource,info=info)
-    return json_object
+        authorData = json_object['articles'][i]['author']
+        contentData = json_object['articles'][i]['content']
+        print(authorData, contentData)
+
+        #Only get the data I want
+        currentData = {'author':authorData, 'content':contentData}
+
+        # Add authors to a list
+        newsData.append(currentData)
+
+    return newsData
+
+# Views route to display the form and get api information to display another page
+@portfolio_app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'GET':
+        newsform = News_Form()
+        return render_template('index.html', form=newsform)
+
+    if request.method == 'POST':
+        try:
+            nation = request.form['countryfield']
+            print(nation)
+            api_info = news_api(nation)
+            print(api_info)
+            return render_template('news.html', news_data=api_info)
+        except Exception as e:
+            print(str(e))
+            print(traceback.format_exc())
+            return jsonify(str(e))
 
 
 if __name__ == "___main___":

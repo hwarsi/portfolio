@@ -1,8 +1,21 @@
 <html>
-    <head><title>Current News</title></head>
-<body>
-    <div id='newsSource'></div>
-    <p> {{source}} </p>
-    <p>{{info}}</p>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+    </head>
+    <h1>Current News</h1>
+
+<table>
+    <tr>
+        <th>Author:</th>
+        <th>Content:</th>
+    </tr>
+    {% for item in news_data %}
+    <tr>
+        <td id = author>{{item['author']}}</td>
+        <td>{{item['content']}}</td>
+    </tr>
+    {% endfor %}
+</table>
 </html>

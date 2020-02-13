@@ -1,0 +1,23 @@
+th {
+    text-align: left;
+}
+
+table, th, td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+th {
+    background-color: aqua;
+}
+
+th, td {
+    padding: 10px
+}
+
+#author{
+    background-color: rgb(187, 180, 172);
+}
+
+h1{
+    text-align: center;
+}
