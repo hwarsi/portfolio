@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from flask import Flask, render_template, jsonify, request
 import json
 import pymongo
@@ -9,7 +11,7 @@ from wtforms import SelectField, SubmitField
 portfolio_app = Flask(__name__)
 portfolio_app.config['SECRET_KEY'] = 'Thisisasecret!'
 
-@portfolio_app.route("/home", methods=['GET'])
+@portfolio_app.route("/", methods=['GET'])
 def homePage():
     myname = "Haris Warsi"
 
@@ -106,8 +108,8 @@ def news_api(nation):
     return newsData
 
 # Views route to display the form and get api information to display another page
-@portfolio_app.route('/', methods=['GET', 'POST'])
-def index():
+@portfolio_app.route('/news', methods=['GET', 'POST'])
+def news():
     if request.method == 'GET':
         newsform = News_Form()
         return render_template('index.html', form=newsform)
@@ -115,15 +117,57 @@ def index():
     if request.method == 'POST':
         try:
             nation = request.form['countryfield']
-            print(nation)
+            #print(nation)
             api_info = news_api(nation)
-            print(api_info)
+            #print(api_info)
             return render_template('news.html', news_data=api_info)
         except Exception as e:
-            print(str(e))
-            print(traceback.format_exc())
+            #print(str(e))
+            #print(traceback.format_exc())
             return jsonify(str(e))
 
+@portfolio_app.route('/dashboard', methods=['GET'])
+def weather_api():
+    response = requests.get('https://api.darksky.net/forecast/83945a80a84576da8cbe39329a67d40c/34.8526,-82.3940')
+    json_object = response.json()
+    day1_temperature = json_object['daily']['data'][0]['apparentTemperatureHigh']
+    day2_temperature = json_object['daily']['data'][1]['apparentTemperatureHigh']
+    day3_temperature = json_object['daily']['data'][2]['apparentTemperatureHigh']
+    day4_temperature = json_object['daily']['data'][3]['apparentTemperatureHigh']
+    day5_temperature = json_object['daily']['data'][4]['apparentTemperatureHigh']
+    day6_temperature = json_object['daily']['data'][5]['apparentTemperatureHigh']
+    day7_temperature = json_object['daily']['data'][6]['apparentTemperatureHigh']
+    day1_wind = json_object['daily']['data'][0]['windSpeed']
+    day2_wind = json_object['daily']['data'][1]['windSpeed']
+    day3_wind = json_object['daily']['data'][2]['windSpeed']
+    day4_wind = json_object['daily']['data'][3]['windSpeed']
+    day5_wind = json_object['daily']['data'][4]['windSpeed']
+    day6_wind = json_object['daily']['data'][5]['windSpeed']
+    day7_wind = json_object['daily']['data'][6]['windSpeed']
+    day1_rain = 100 * (json_object['daily']['data'][0]['precipProbability'])
+    day2_rain = 100 * (json_object['daily']['data'][1]['precipProbability'])
+    day3_rain = 100 * (json_object['daily']['data'][2]['precipProbability'])
+    day4_rain = 100 * (json_object['daily']['data'][3]['precipProbability'])
+    day5_rain = 100 * (json_object['daily']['data'][4]['precipProbability'])
+    day6_rain = 100 * (json_object['daily']['data'][5]['precipProbability'])
+    day7_rain = 100 * (json_object['daily']['data'][6]['precipProbability'])
+    day1_icon = json_object['daily']['data'][0]['icon']
+    day2_icon = json_object['daily']['data'][1]['icon']
+    day3_icon = json_object['daily']['data'][2]['icon']
+    day4_icon = json_object['daily']['data'][3]['icon']
+    day5_icon = json_object['daily']['data'][4]['icon']
+    day6_icon = json_object['daily']['data'][5]['icon']
+    day7_icon = json_object['daily']['data'][6]['icon']
+    print(day1_rain)
 
-if __name__ == "___main___":
-    portfolio_app.run()
+    temperature = {'day1_temperature':day1_temperature, 'day2_temperature':day2_temperature, 'day3_temperature':day3_temperature, 'day4_temperature':day4_temperature, 'day5_temperature':day5_temperature, 'day6_temperature':day6_temperature, 'day7_temperature':day7_temperature}
+    wind = {'day1_wind':day1_wind, 'day2_wind':day2_wind, 'day3_wind':day3_wind, 'day4_wind':day4_wind, 'day5_wind':day5_wind, 'day6_wind':day6_wind, 'day7_wind':day7_wind}
+    rain = {'day1_rain':day1_rain, 'day2_rain':day2_rain, 'day3_rain':day3_rain, 'day4_rain':day4_rain, 'day5_rain':day5_rain, 'day6_rain':day6_rain, 'day7_rain':day7_rain} 
+    icon = {'day1_icon':day1_icon, 'day2_icon':day2_icon, 'day3_icon':day3_icon, 'day4_icon':day4_icon, 'day5_icon':day5_icon, 'day6_icon':day6_icon, 'day7_icon':day7_icon}                     
+    #print(json_object)
+    return render_template('dashboard.html', temperature=temperature, wind=wind, rain=rain, icon=icon)
+
+
+
+if __name__ == "__main__":
+    portfolio_app.run(debug=True)

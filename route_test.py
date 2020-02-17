@@ -8,7 +8,7 @@ class TestValidator(unittest.TestCase):
 		portfolio_app.testing = True
 		self.portfolio_app = portfolio_app.test_client()
 
-        # executed after each test
+    # executed after each test
     def tearDown(self):
         pass
 
