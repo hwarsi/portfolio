@@ -1,0 +1,43 @@
+<html>
+    <style>
+        #table{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 1000px;
+            background-color: hotpink;
+        }
+    </style>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/complex.css') }}">
+    </head>
+    <body>
+    <div id="table">
+        <div id="position">Position
+            {% for key in position %}
+            <div>{{key}}</div>
+            {% endfor %}
+        </div>
+        <div id="company">Company
+            {% for key in company %}
+            <div>{{key}}</div>
+            {% endfor %}
+        </div>
+        <div id="description">Description
+            {% for key in description %}
+            <div>{{key}}</div>
+            {% endfor %}
+        </div>
+        <div id="contact_info">Contact Info</div>
+        <div id="info">Info</div>
+        <div id="status">Status</div>
+    </div>
+
+
+    </body>
+
+    <script>
+    
+    </script>
+</html>

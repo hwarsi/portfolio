@@ -2,6 +2,8 @@
     <head>
         <title>Personal Dashboard</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 
     </head>
     <body>
@@ -15,7 +17,7 @@
             <div id="innercontainer">
                 <div>
                     <h3 id="day1"></h3> 
-                    <img src="{{ url_for('static', filename='img/sun.png') }}" width="120px", height="100px"> 
+                    <img src={{day1_img}} width="120px", height="100px">  
                     <p>{{icon['day1_icon']}}</p>
                     <p>{{ temperature['day1_temperature'] }}</p>
                     <p>{{wind['day1_wind']}}</p>
@@ -23,7 +25,7 @@
                 </div>
                 <div>
                     <h3 id="day2"></h3> 
-                    <img src="{{ url_for('static', filename='img/rain.png') }}" width="120px", height="100px"> 
+                    <img src={{day2_img}} width="120px", height="100px">  
                     <p>{{icon['day2_icon']}}</p>
                     <p>{{ temperature['day2_temperature'] }}</p>
                     <p>{{wind['day2_wind']}}</p>
@@ -31,7 +33,7 @@
                 </div>
                 <div>
                     <h3 id="day3"></h3> 
-                    <img src="{{ url_for('static', filename='img/partly.png') }}" width="120px", height="100px"> 
+                    <img src={{day3_img}} width="120px", height="100px">  
                     <p>{{icon['day3_icon']}}</p>
                     <p>{{ temperature['day3_temperature'] }}</p>
                     <p>{{wind['day3_wind']}}</p>
@@ -39,7 +41,7 @@
                 </div>
                 <div>
                     <h3 id="day4"></h3> 
-                    <img src="{{ url_for('static', filename='img/rain.png') }}" width="120px", height="100px"> 
+                    <img src={{day4_img}} width="120px", height="100px">  
                     <p>{{icon['day4_icon']}}</p>
                     <p>{{ temperature['day4_temperature'] }}</p>
                     <p>{{wind['day4_wind']}}</p>
@@ -47,7 +49,7 @@
                 </div>
                 <div>
                     <h3 id="day5"></h3> 
-                    <img src="{{ url_for('static', filename='img/rain.png') }}" width="120px", height="100px"> 
+                    <img src={{day5_img}} width="120px", height="100px">   
                     <p>{{icon['day5_icon']}}</p>
                     <p>{{ temperature['day5_temperature'] }}</p>
                     <p>{{wind['day5_wind']}}</p>
@@ -55,7 +57,7 @@
                 </div>
                 <div>
                     <h3 id="day6"></h3> 
-                    <img src="{{ url_for('static', filename='img/rain.png') }}" width="120px", height="100px"> 
+                    <img src={{day6_img}} width="120px", height="100px">  
                     <p>{{icon['day6_icon']}}</p>
                     <p>{{ temperature['day6_temperature'] }}</p>
                     <p>{{wind['day6_wind']}}</p>
@@ -63,8 +65,8 @@
                 </div>
                 <div>
                     <h3 id="day7"></h3> 
-                    <img src="{{ url_for('static', filename='img/sun.png') }}" width="120px", height="100px">
-                    <p>{{icon['day7_icon']}}</p>
+                    <img src={{day7_img}} width="120px", height="100px"> 
+                    <p id="stop">{{icon['day7_icon']}}</p>
                     <p>{{ temperature['day7_temperature'] }}</p>
                     <p>{{wind['day7_wind']}}</p>
                     <p>{{rain['day7_rain']}}</p>   
@@ -72,9 +74,10 @@
             </div>
         </div>
     </body>
-    <script>
+    <script type="text/javascript">
     function days() {
-    var cday = current_date.getDay();
+    var datez = new Date();
+    var cday = datez.getDay(); 
     var day1 = $("#day1");
     var day2 = $("#day2");
     var day3 = $("#day3");
@@ -143,5 +146,9 @@ if (cday === 0){
     console.log('hey');
 }}
 days();
+    var sun = $("#sun");
+    var rain = $(".rain");
+    var stop = $("stop");
+    console.log(sumday7)
     </script>
 </html>
