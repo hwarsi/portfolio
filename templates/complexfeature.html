@@ -1,40 +1,71 @@
 <html>
     <style>
-        #table{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            width: 1000px;
-            background-color: hotpink;
-        }
+.table {
+    display: flex;
+    flex-flow: column nowrap; /* prevents line breaks in columns*/
+    border: 3px solid #f2f2f2; /*border around the table */
+    font-size: 1rem; 
+    margin: .5rem;
+    line-height: 1.5; /*used it to set distances between lines of text*/
+}
+
+
+@media (min-width: 500px) { /*so the css pertaining to the different types of devices you use */
+    .headers{
+        font-weight: 700;/*this made the headers such as Position, Company and details bolder*/
+        background: #f2f2f2;
+    }
+}
+
+@media (min-width: 500px) {
+    .tablerow{
+        display: flex;
+        flex-flow: row nowrap; /*put the class of objects in a row and also ensure there would be no line break*/
+    }
+}
+
+.tablerow{
+    width: 100%;
+    flex-direction: row; /* puts items in a row*/
+} 
+
+.rowitem{
+    display:flex;
+    flex-flow: nowrap;
+    flex-grow: 1; /*specifies how much the next item will grow. so it kinda insures that the lengths are the same*/
+    flex-basis: 0; /*lenght of an item*/
+    padding: .5em; /*space around an element*/
+    word-break: break-word; /*how a word should be split when it reached the end of the line*/
+}
+
     </style>
     <head>
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/complex.css') }}">
     </head>
     <body>
-    <div id="table">
-        <div id="position">Position
-            {% for key in position %}
-            <div>{{key}}</div>
-            {% endfor %}
-        </div>
-        <div id="company">Company
-            {% for key in company %}
-            <div>{{key}}</div>
-            {% endfor %}
-        </div>
-        <div id="description">Description
-            {% for key in description %}
-            <div>{{key}}</div>
-            {% endfor %}
-        </div>
-        <div id="contact_info">Contact Info</div>
-        <div id="info">Info</div>
-        <div id="status">Status</div>
-    </div>
-
-
+        <div class="table">
+            <div class="headers tablerow">
+                <div class="rowitem">Position</div>
+                <div class="rowitem">Company</div>
+                <div class="rowitem">Description</div>
+            </div>
+            <div class="tablerow">
+                <div class="rowitem">{{(job[0]["position"])}}</div>
+                <div class="rowitem">{{(job[0]["company"])}}</div>
+                <div class="rowitem">{{(job[0]["description"])}}</div>
+            </div>
+            <div class="tablerow">
+                <div class="rowitem">black</div>
+                <div class="rowitem">white</div>
+                <div class="rowitem">purple</div>
+            </div>
+            <div class="tablerow">
+                <div class="rowitem">blue</div>
+                <div class="rowitem">star</div>
+                <div class="rowitem">circle</div>
+            </div>
+    </div>       
     </body>
 
     <script>

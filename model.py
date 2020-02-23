@@ -1,11 +1,12 @@
 from pymongo import MongoClient
 
 def connectToDB():
-    client = MongoClient('mongodb+srv://haris:9626602@appcluster-kmcfd.mongodb.net/portfolio_database', username='haris', password='9626602', authSource='portfolio_database',  authMechanism='SCRAM-SHA-1') #Connects to the Mongo App
+    #Connects to the Mongo App
+    client = MongoClient('mongodb://hwarsi:9626602hw@cluster0-shard-00-00-0fkzd.mongodb.net:27017,cluster0-shard-00-01-0fkzd.mongodb.net:27017,cluster0-shard-00-02-0fkzd.mongodb.net:27017/portfolio_database?ssl=true&ssl_cert_reqs=CERT_NONE&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority')
     print(client)
     
-    db = client.portfolio_database #database name
+    #Database name
+    db = client.portfolio_database
     print(db)
-
 
     return db
