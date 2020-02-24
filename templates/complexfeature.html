@@ -21,6 +21,11 @@
     .tablerow{
         display: flex;
         flex-flow: row nowrap; /*put the class of objects in a row and also ensure there would be no line break*/
+        border-bottom: 3px black solid;
+        border-left: 3px black solid;
+        border-right: 3px black solid;
+        border-top: 3px black solid;
+        font-size: small;
     }
 }
 
@@ -45,26 +50,19 @@
     </head>
     <body>
         <div class="table">
+            <button> <img src="{{ url_for('static', filename='img/plus.png') }}" alt="Haris" width="200px" height="300px"></button>
             <div class="headers tablerow">
                 <div class="rowitem">Position</div>
                 <div class="rowitem">Company</div>
                 <div class="rowitem">Description</div>
             </div>
+            {% for i in range(job|length) %}
             <div class="tablerow">
                 <div class="rowitem">{{(job[i]["position"])}}</div>
                 <div class="rowitem">{{(job[i]["company"])}}</div>
                 <div class="rowitem">{{(job[i]["description"])}}</div>
             </div>
-            <div class="tablerow">
-                <div class="rowitem">{{(job[i]["position"])}}</div>
-                <div class="rowitem">white</div>
-                <div class="rowitem">purple</div>
-            </div>
-            <div class="tablerow">
-                <div class="rowitem">blue</div>
-                <div class="rowitem">star</div>
-                <div class="rowitem">circle</div>
-            </div>
+            {% endfor %}
     </div>       
     </body>
 

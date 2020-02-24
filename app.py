@@ -293,8 +293,7 @@ def complexfeature():
     }
 
 ]
-    length = len(job)
-    return render_template('complexfeature.html', job=job, length=length)
+    return render_template('complexfeature.html', job=job)
     
 '''for key in position:
         print(key)

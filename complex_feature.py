@@ -64,6 +64,3 @@ job = [
     }
 
 ]
-length = len(job)
-print(length)
- 
