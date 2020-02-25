@@ -1,0 +1,91 @@
+.table {
+    display: flex;
+    flex-flow: column nowrap; /* prevents line breaks in columns*/
+    border: 3px solid #f2f2f2; /*border around the table */
+    font-size: 1rem; 
+    margin: .5rem;
+    line-height: 1.5; /*used it to set distances between lines of text*/
+}
+
+
+@media (min-width: 500px) { /*so the css pertaining to the different types of devices you use */
+    .headers{
+        font-weight: 700;/*this made the headers such as Position, Company and details bolder*/
+        background: orange;
+    }
+}
+
+@media (min-width: 500px) {
+    .tablerow{
+        display: flex;
+        flex-flow: row nowrap; /*put the class of objects in a row and also ensure there would be no line break*/
+        border-bottom: 3px black solid;
+        border-left: 3px black solid;
+        border-right: 3px black solid;
+        border-top: 3px black solid;
+        font-size: small;
+    }
+}
+
+.tablerow{
+    width: 100%;
+    flex-direction: row; /* puts items in a row*/
+} 
+
+.rowitem{
+    display:flex;
+    flex-flow: nowrap;
+    flex-grow: 1; /*specifies how much the next item will grow. so it kinda insures that the lengths are the same*/
+    flex-basis: 0; /*lenght of an item*/
+    padding: .5em; /*space around an element*/
+    word-break: break-word; /*how a word should be split when it reached the end of the line*/
+}
+#button{
+    width:70px;
+}
+
+.color{
+    background-color: rgb(190, 185, 185);
+    display:flex;
+    flex-flow: nowrap;
+    flex-grow: 1; /*specifies how much the next item will grow. so it kinda insures that the lengths are the same*/
+    flex-basis: 0; /*lenght of an item*/
+    padding: .5em; /*space around an element*/
+    word-break: break-word;
+}
+#position{
+    flex-direction: row;
+    width: 200px;
+    height: 30px;
+    margin-right: 200px;
+    padding-top: 40px;
+}
+#company{
+    flex-direction: row;
+    width: 200px;
+    height: 30px;
+    justify-content: center;
+    padding-top: 40px;
+}
+#description{
+    flex-direction: row;
+    width: 395px;
+    height: 80px;
+    justify-content: center;
+    margin-left: 230px;
+    padding-top: 10px;
+}
+#newrow{
+    background-color: rgb(190, 185, 185);
+    border-left: black 3px solid;
+    border-right: black 3px solid;
+    border-bottom: black 3px solid;
+    width: 100%;
+}
+input{
+    border: black 3px solid;
+}
+
+input.placeholder{
+    font-size: 30px;
+}

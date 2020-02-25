@@ -1,56 +1,12 @@
 <html>
-    <style>
-.table {
-    display: flex;
-    flex-flow: column nowrap; /* prevents line breaks in columns*/
-    border: 3px solid #f2f2f2; /*border around the table */
-    font-size: 1rem; 
-    margin: .5rem;
-    line-height: 1.5; /*used it to set distances between lines of text*/
-}
-
-
-@media (min-width: 500px) { /*so the css pertaining to the different types of devices you use */
-    .headers{
-        font-weight: 700;/*this made the headers such as Position, Company and details bolder*/
-        background: #f2f2f2;
-    }
-}
-
-@media (min-width: 500px) {
-    .tablerow{
-        display: flex;
-        flex-flow: row nowrap; /*put the class of objects in a row and also ensure there would be no line break*/
-        border-bottom: 3px black solid;
-        border-left: 3px black solid;
-        border-right: 3px black solid;
-        border-top: 3px black solid;
-        font-size: small;
-    }
-}
-
-.tablerow{
-    width: 100%;
-    flex-direction: row; /* puts items in a row*/
-} 
-
-.rowitem{
-    display:flex;
-    flex-flow: nowrap;
-    flex-grow: 1; /*specifies how much the next item will grow. so it kinda insures that the lengths are the same*/
-    flex-basis: 0; /*lenght of an item*/
-    padding: .5em; /*space around an element*/
-    word-break: break-word; /*how a word should be split when it reached the end of the line*/
-}
-
-    </style>
+ 
     <head>
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/complex.css') }}">
-    </head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/complexity.css') }}">
+     </head>
     <body>
         <div class="table">
-            <button> <img src="{{ url_for('static', filename='img/plus.png') }}" alt="Haris" width="200px" height="300px"></button>
+            <button id="button"> <img src="{{ url_for('static', filename='img/plus.png') }}" width="50px" height="50px"></button>
             <div class="headers tablerow">
                 <div class="rowitem">Position</div>
                 <div class="rowitem">Company</div>
@@ -58,15 +14,30 @@
             </div>
             {% for i in range(job|length) %}
             <div class="tablerow">
-                <div class="rowitem">{{(job[i]["position"])}}</div>
-                <div class="rowitem">{{(job[i]["company"])}}</div>
-                <div class="rowitem">{{(job[i]["description"])}}</div>
+                <div class = "color" class="rowitem">{{(job[i]["position"])}}</div>
+                <div class= "color" class="rowitem">{{(job[i]["company"])}}</div>
+                <div class= "color" class="rowitem">{{(job[i]["description"])}}</div>
             </div>
             {% endfor %}
-    </div>       
-    </body>
-
+            <div id="newrow">
+                <onsubmit="return newrow_form></onsubmit>
+                <input type="text" id="position" position="positionname"
+                placeholder="Position Name">
+                <input type="text" id="company" position="companyname"
+                placeholder="Company Name">
+                <input type="text" id="description" position="descriptionname"
+                placeholder="Enter Description">
+                <button id="submit">Submit</button>
+        </div> 
+        <div class="appendithere"></div>     
+        </body>
     <script>
+    $("#newrow").hide();
+    $("#button").click(function(){
+        $("#newrow").clone().appendTo(".appendithere");
+        $("#newrow").show();
+    });
+        
     
     </script>
 </html>
