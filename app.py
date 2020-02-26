@@ -289,11 +289,11 @@ def complexfeature():
         "position": 'Senior Data Engineer',
         "company": 'Thorn',
         "description":'You have a commitment to putting the children we serve at the center of everything you do. You have proficient software development knowledge, with experience building, growing, maintaining a variety of products, and a love for creating elegant applications using modern technologies.',
-
     }
-
-]
-    return render_template('complexfeature.html', job=job)
+    ]
+    counter=len(job)
+    print(job)
+    return render_template('complexfeature.html', job=job, counter=counter)
     
 '''for key in position:
         print(key)

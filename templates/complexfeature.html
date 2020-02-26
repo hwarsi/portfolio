@@ -11,12 +11,14 @@
                 <div class="rowitem">Position</div>
                 <div class="rowitem">Company</div>
                 <div class="rowitem">Description</div>
+                <div class="rowitem">Button</div>
             </div>
             {% for i in range(job|length) %}
             <div class="tablerow">
-                <div class = "color" class="rowitem">{{(job[i]["position"])}}</div>
-                <div class= "color" class="rowitem">{{(job[i]["company"])}}</div>
-                <div class= "color" class="rowitem">{{(job[i]["description"])}}</div>
+                <div class = "color"  class="rowitem" id="positionz">{{(job[i]["position"])}}</div>
+                <div class= "color"  class="rowitem" id="companyz">{{(job[i]["company"])}}</div>
+                <div class= "color"  class="rowitem" id="descriptionz">{{(job[i]["description"])}}</div>
+                <button class="delete"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button>
             </div>
             {% endfor %}
             <div id="newrow">
@@ -28,7 +30,7 @@
                 <input type="text" id="description" position="descriptionname"
                 placeholder="Enter Description">
                 <button id="submit">Submit</button>
-        </div> 
+            </div> 
         <div class="appendithere"></div>     
         </body>
     <script>
@@ -37,7 +39,11 @@
         $("#newrow").clone().appendTo(".appendithere");
         $("#newrow").show();
     });
-        
-    
+    $(".delete").click(function(){
+        $(this).parent().find("#positionz").remove();
+        $(this).parent().find("#companyz").remove();
+        $(this).parent().find("#descriptionz").remove();
+    });
+
     </script>
 </html>

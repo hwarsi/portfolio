@@ -64,3 +64,5 @@ job = [
     }
 
 ]
+counter=len(job)
+print(counter)
