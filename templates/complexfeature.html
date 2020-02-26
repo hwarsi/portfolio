@@ -13,7 +13,7 @@
                 <div class="rowitem">Description</div>
                 <div class="rowitem">Button</div>
             </div>
-            {% for i in range(job|length) %}
+            {% for i in range(1) %}
             <div class="tablerow">
                 <div class = "color"  class="rowitem" id="positionz">{{(job[i]["position"])}}</div>
                 <div class= "color"  class="rowitem" id="companyz">{{(job[i]["company"])}}</div>
@@ -31,7 +31,14 @@
                 placeholder="Enter Description">
                 <button id="submit">Submit</button>
             </div> 
-        <div class="appendithere"></div>     
+        <div class="appendithere"></div>  
+        <div class="appenditherealso">
+            <div class="appendposition" class="same"></div>
+            <div class="appendcompany" class="same"></div>
+            <div class="appenddescription"class="same"></div>            
+        </div>
+    </div>     
+   
         </body>
     <script>
     $("#newrow").hide();
@@ -48,6 +55,12 @@
         var position_data = $("#position").val();
         var company_data = $("#company").val();
         var description_data = $("#description").val();
+        console.log(position_data);
+        console.log(company_data);
+        console.log(description_data);
+        $(".appendposition").text(position_data);
+        $(".appendcompany").text(company_data);
+        $(".appenditherealso").find(".appenddescription").text(description_data);
     });
 
     </script>

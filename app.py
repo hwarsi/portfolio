@@ -292,7 +292,6 @@ def complexfeature():
     }
     ]
     counter=len(job)
-    print(job)
     return render_template('complexfeature.html', job=job, counter=counter)
     
 '''for key in position:
