@@ -6,37 +6,40 @@
      </head>
     <body>
         <div class="table">
-            <button id="button"> <img src="{{ url_for('static', filename='img/plus.png') }}" width="50px" height="50px"></button>
-            <div class="headers tablerow">
-                <div class="rowitem">Position</div>
-                <div class="rowitem">Company</div>
-                <div class="rowitem">Description</div>
-                <div class="rowitem">Button</div>
-            </div>
-            {% for i in range(1) %}
-            <div class="tablerow">
-                <div class = "color"  class="rowitem" id="positionz">{{(job[i]["position"])}}</div>
-                <div class= "color"  class="rowitem" id="companyz">{{(job[i]["company"])}}</div>
-                <div class= "color"  class="rowitem" id="descriptionz">{{(job[i]["description"])}}</div>
-                <button class="delete"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button>
-            </div>
-            {% endfor %}
-            <div id="newrow">
-                <onsubmit="return newrow_form></onsubmit>
-                <input type="text" id="position" position="positionname"
-                placeholder="Position Name">
-                <input type="text" id="company" position="companyname"
-                placeholder="Company Name">
-                <input type="text" id="description" position="descriptionname"
-                placeholder="Enter Description">
-                <button id="submit">Submit</button>
-            </div> 
-        <div class="appendithere"></div>  
-        <div class="appenditherealso">
-            <div class="appendposition" class="same"></div>
-            <div class="appendcompany" class="same"></div>
-            <div class="appenddescription"class="same"></div>            
-        </div>
+                <button id="button"> <img src="{{ url_for('static', filename='img/plus.png') }}" width="50px" height="50px"></button>
+                <div class="headers tablerow">
+                    <div class="rowitem">Position</div>
+                    <div class="rowitem">Company</div>
+                    <div class="rowitem">Description</div>
+                    <div class="rowitem">Button</div>
+                </div>
+                {% for i in range(1) %}
+                <div class="tablerow">
+                    <div class = "color"  class="rowitem" id="positionz">{{(job[i]["position"])}}</div>
+                    <div class= "color"  class="rowitem" id="companyz">{{(job[i]["company"])}}</div>
+                    <div class= "color"  class="rowitem" id="descriptionz">{{(job[i]["description"])}}</div>
+                    <button class="delete"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button>
+                </div>
+                {% endfor %}
+                <div id="newrow">
+                    <onsubmit="return newrow_form></onsubmit>
+                    <input type="text" id="position" position="positionname"
+                    placeholder="Position Name">
+                    <input type="text" id="company" position="companyname"
+                    placeholder="Company Name">
+                    <input type="text" id="description" position="descriptionname"
+                    placeholder="Enter Description">
+                    <button class="submit">Submit</button>
+                </div>
+            <div class=cloneitagain>
+            <div class="appenditherealso">
+                <div id="appendposition" class = "colors"  class="rowitem"></div>
+                <div id="appendcompany" class = "colors"  class="rowitem" ></div>
+                <div id="appenddescription" class = "colors"  class="rowitem"></div> 
+                <button class="delete"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button>           
+                </div>
+            <div class="appendithere"></div>
+        </div>            
     </div>     
    
         </body>
@@ -51,16 +54,20 @@
         $(this).parent().find("#companyz").remove();
         $(this).parent().find("#descriptionz").remove();
     });
-    $("#submit").click(function(){
+    $(".appenditherealso").hide();
+    $(".submit").click(function(){
         var position_data = $("#position").val();
         var company_data = $("#company").val();
         var description_data = $("#description").val();
         console.log(position_data);
         console.log(company_data);
         console.log(description_data);
-        $(".appendposition").text(position_data);
-        $(".appendcompany").text(company_data);
-        $(".appenditherealso").find(".appenddescription").text(description_data);
+        $(this).parent().find("#appendposition").text(position_data);
+        $("#appendcompany").text(company_data);
+        $("#appenddescription").text(description_data);
+        $(".appenditherealso").show();
+        $("#newrow").hide();
+        $(".cloneitagain").clone();
     });
 
     </script>
