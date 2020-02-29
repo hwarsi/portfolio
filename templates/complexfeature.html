@@ -19,6 +19,8 @@
                     <div class= "color"  class="rowitem" id="companyz">{{(job[i]["company"])}}</div>
                     <div class= "color"  class="rowitem" id="descriptionz">{{(job[i]["description"])}}</div>
                     <button class="delete"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button>
+                    <button class="edit">Edit</button>
+                    <button class="highlight">Active Job</button>
                 </div>
                 {% endfor %}
                 <div id="newrow">
@@ -36,7 +38,11 @@
                 <div id="appendposition" class = "colors"  class="rowitem"></div>
                 <div id="appendcompany" class = "colors"  class="rowitem" ></div>
                 <div id="appenddescription" class = "colors"  class="rowitem"></div> 
-                <button class="delete"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button>           
+                <button class="deletenewrow"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button> 
+                <button class="editnewrow">Edit</button>
+                <button class="highlightnewrow">Active Job</button>
+
+          
                 </div>
             <div class="appendithere"></div>
         </div>            
@@ -45,29 +51,101 @@
         </body>
     <script>
     $("#newrow").hide();
+    $(".appenditherealso").hide();
     $("#button").click(function(){
-        $("#newrow").clone().appendTo(".appendithere");
-        $("#newrow").show();
+        $(this).parent().find("#newrow").clone().appendTo(".appendithere");
+        $(this).parent().find("#newrow").show();
+        $(this).parent().find(".appenditherealso").hide();
+        $(this).parent().find(".submit").click(function(){
+            var position_data = $("#position").val();
+            var company_data = $("#company").val();
+            var description_data = $("#description").val();
+            console.log(position_data);
+            console.log(company_data);
+            console.log(description_data);
+            if (position_data === '' || company_data === '' || description_data === '') {
+            alert("Please Fill Required Fields");
+            return false;
+        } else{
+            $("#appendposition").text(position_data);
+            $("#appendcompany").text(company_data);
+            $("#appenddescription").text(description_data);
+            $(".appenditherealso").show();
+            $("#newrow").hide();  
+        }   
+    });
     });
     $(".delete").click(function(){
         $(this).parent().find("#positionz").remove();
         $(this).parent().find("#companyz").remove();
         $(this).parent().find("#descriptionz").remove();
+        alert("You have deleted the row");
     });
-    $(".appenditherealso").hide();
-    $(".submit").click(function(){
-        var position_data = $("#position").val();
-        var company_data = $("#company").val();
-        var description_data = $("#description").val();
-        console.log(position_data);
-        console.log(company_data);
-        console.log(description_data);
-        $(this).parent().find("#appendposition").text(position_data);
-        $("#appendcompany").text(company_data);
-        $("#appenddescription").text(description_data);
-        $(".appenditherealso").show();
-        $("#newrow").hide();
-        $(".cloneitagain").clone();
+    $(".edit").click(function(){
+        var position = $("#positionz");
+        var company =  $("#companyz");
+        var description = $("#descriptionz");
+        $(this).parent().find("#positionz").attr('contenteditable', 'true');
+        $(this).parent().find("#positionz").click(function(){
+            $(this).parent().find("#positionz").css({'background':'red'});
+            $(this).parent().find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
+            $(this).parent().find("#companyz").css({'background':'rgb(190, 185, 185)'});
+            alert("You are now editing the position")
+        });
+        $(this).parent().find("#companyz").attr('contenteditable', 'true');
+        $(this).parent().find("#companyz").click(function(){
+            $(this).parent().find("#companyz").css({'background':'red'});
+            $(this).parent().find("#positionz").css({'background':'rgb(190, 185, 185)'});
+            $(this).parent().find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
+            alert("You are now editing the company")
+        });
+        $(this).parent().find("#descriptionz").attr('contenteditable', 'true');
+        $(this).parent().find("#descriptionz").click(function(){
+            $(this).parent().find("#descriptionz").css({'background':'red'});
+            $(this).parent().find("#companyz").css({'background':'rgb(190, 185, 185)'});
+            $(this).parent().find("#positionz").css({'background':'rgb(190, 185, 185)'});
+            alert("You are now editing the description")
+        });
+        alert("You can now start editing");
+    });
+    $(".highlight").click(function(){
+        $(this).parent().find("#positionz").css({'background':'yellow'});
+        $(this).parent().find("#companyz").css({'background':'yellow'});
+        $(this).parent().find("#descriptionz").css({'background':'yellow'});
+        alert("You have highlighted the cell");
+    });
+    $(".highlightnewrow").click(function(){
+        $(this).parent().find("#appendposition").css({'background':'yellow'});
+        $(this).parent().find("#appendcompany").css({'background':'yellow'});
+        $(this).parent().find("#appenddescription").css({'background':'yellow'});
+        alert("You have highlighted the row");
+    });
+    $(".editnewrow").click(function(){
+        var appendposition = $("#appendposition");
+        var appendcompany =  $("#appendcompany");
+        var appenddescription = $("#appenddescription");
+        $(this).parent().find("#appendposition").attr('contenteditable', 'true');
+        appendposition.click(function(){
+            $(this).parent().find("#appendposition").css({'background':'red'});
+            $(this).parent().find("#appenddescription").css({'background':'rgb(190, 185, 185)'});
+            alert("You are now editing the position")
+        });
+        $(this).parent().find("#appendcompany").attr('contenteditable', 'true');
+        appendcompany.click(function(){
+            $(this).parent().find("#appendcompany").css({'background':'red'});
+            $(this).parent().find("#appenddescription").css({'background':'rgb(190, 185, 185)'});
+            $(this).parent().find("#appendposition").css({'background':'rgb(190, 185, 185)'});
+            alert("You are now editing the company")
+        });
+        $(this).parent().find("#appenddescription").attr('contenteditable', 'true');
+        appenddescription.click(function(){
+            $(this).parent().find("#appenddescription").css({'background':'red'});
+            $(this).parent().find("#appendcompany").css({'background':'rgb(190, 185, 185)'});
+            $(this).parent().find("#appendposition").css({'background':'rgb(190, 185, 185)'});
+
+            alert("You are now editing the description")
+        });
+        alert("You can now start editing");
     });
 
     </script>
