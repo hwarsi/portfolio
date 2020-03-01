@@ -113,20 +113,7 @@ input.placeholder{
     padding: .5em; /*space around an element*/
     word-break: break-word;
 }
-.container
-{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-h1
-{
-    margin-bottom: 40px;
-    font-family: sans-serif;
 
-}
 
 .switch{
     position: relative;
@@ -179,7 +166,6 @@ input:checked + .slider:before
     width: 56px;
     height: 30px;
     margin: 0 10px;
-    margin-top: 75px;
 }
 
 .switch_new_row input {display: none}
