@@ -20,7 +20,10 @@
                     <div class= "color"  class="rowitem" id="descriptionz">{{(job[i]["description"])}}</div>
                     <button class="delete"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button>
                     <button class="edit">Edit</button>
-                    <button class="highlight">Active Job</button>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class ="slider"></span>
+                    </label>
                 </div>
                 {% endfor %}
                 <div id="newrow">
@@ -40,14 +43,16 @@
                 <div id="appenddescription" class = "colors"  class="rowitem"></div> 
                 <button class="deletenewrow"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button> 
                 <button class="editnewrow">Edit</button>
-                <button class="highlightnewrow">Active Job</button>
+                <label class="switch_new_row">
+                    <input type="checkbox">
+                    <span class ="slider"></span>
+                </label>
 
           
                 </div>
             <div class="appendithere"></div>
-        </div>            
-    </div>     
-   
+            </div>
+        </div>    
         </body>
     <script>
     $("#newrow").hide();
@@ -73,6 +78,31 @@
             $(".appenditherealso").show();
             $("#newrow").hide();  
         }   
+
+        var new_job_data = {'position':position_data, 'company':company_data, 'description':description_data};
+        var baseURL = window.location.origin; 
+        var Post_URL = baseURL + '/postjob';
+
+        $.ajax({
+            method: 'POST',
+            url: Post_URL,
+            data: JSON.stringify(new_job_data),
+            contentType: "application/json",
+            dataType: 'json',
+            success: function(msg) {
+                console.log(msg)   
+                console.log('SUCCESS REACHED API!');
+                if (msg === 'Failed') {
+                    alert ('Try again later! Failed to receive info!')
+                } else {
+                    alert('Job Info Has Been Saved!');
+                }
+            },
+            error: function(error) {
+                console.log(error);
+                alert('FAILED TO REACH API!');
+            }
+        });
     });
     });
     $(".delete").click(function(){
@@ -90,14 +120,14 @@
             $(this).parent().find("#positionz").css({'background':'red'});
             $(this).parent().find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
             $(this).parent().find("#companyz").css({'background':'rgb(190, 185, 185)'});
-            alert("You are now editing the position")
+            alert("You are now editing the position");
         });
         $(this).parent().find("#companyz").attr('contenteditable', 'true');
         $(this).parent().find("#companyz").click(function(){
             $(this).parent().find("#companyz").css({'background':'red'});
             $(this).parent().find("#positionz").css({'background':'rgb(190, 185, 185)'});
             $(this).parent().find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
-            alert("You are now editing the company")
+            alert("You are now editing the company");
         });
         $(this).parent().find("#descriptionz").attr('contenteditable', 'true');
         $(this).parent().find("#descriptionz").click(function(){
@@ -108,13 +138,12 @@
         });
         alert("You can now start editing");
     });
-    $(".highlight").click(function(){
+    $(".switch").click(function(){
         $(this).parent().find("#positionz").css({'background':'yellow'});
         $(this).parent().find("#companyz").css({'background':'yellow'});
         $(this).parent().find("#descriptionz").css({'background':'yellow'});
-        alert("You have highlighted the cell");
     });
-    $(".highlightnewrow").click(function(){
+    $(".switch_new_row").click(function(){
         $(this).parent().find("#appendposition").css({'background':'yellow'});
         $(this).parent().find("#appendcompany").css({'background':'yellow'});
         $(this).parent().find("#appenddescription").css({'background':'yellow'});

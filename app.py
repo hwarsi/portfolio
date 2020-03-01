@@ -4,7 +4,7 @@ import pymongo
 from flask import Flask, render_template, jsonify, request, url_for
 from flask_wtf import FlaskForm
 from wtforms import SelectField, SubmitField
-from model import connectToDB
+from model import connectToDB, connectToDB_2
 from complex_feature import job
 
 portfolio_app = Flask(__name__)
@@ -299,9 +299,32 @@ def complexfeature():
     for key in company:
         print(key)'''
 
+@portfolio_app.route('/postjob', methods=['POST'])
+def postJobData():
+    try:
+       
+        ajax_data = request.get_json()
+        print(request.get_json())
 
+        db = connectToDB_2()
 
+        collection_remote_jobs = db.collection_remote_jobs
+        print(collection_remote_jobs)
 
+        collection_remote_jobs.insert_one(ajax_data)
+
+        return jsonify('Success it worked')
+    except Exception as e:
+        print(e)
+        print(traceback.format_exc())
+        return jsonify('Failed!')
+
+@portfolio_app.route('/getjob', methods=['GET'])
+def GetJobData():
+    response = requests.get('https://remoteok.io/api?ref=producthunt')
+    json_object = response.json()
+    length = len(json_object)
+    print(length)
 
 if __name__ == "__main__":
     portfolio_app.run(debug=True)

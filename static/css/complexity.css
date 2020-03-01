@@ -113,5 +113,74 @@ input.placeholder{
     padding: .5em; /*space around an element*/
     word-break: break-word;
 }
+.container
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+h1
+{
+    margin-bottom: 40px;
+    font-family: sans-serif;
 
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 30px;
+    margin: 0 10px;
+    margin-top: 75px;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.switch input {display: none}
+
+.slider:before
+{
+    position: absolute;
+    content: '';
+    height: 22px;
+    width: 22px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+input:checked + .slider
+{
+    background-color: #ff278c;
+
+}
+input:checked + .slider:before
+{
+    transform: translateX(22px);
+}
+
+.switch_new_row{
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 30px;
+    margin: 0 10px;
+    margin-top: 75px;
+}
+
+.switch_new_row input {display: none}
 

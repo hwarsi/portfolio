@@ -55,7 +55,6 @@ $(document).ready(function() {
     });
 });
 
-/*
 // GET REQUEST EXAMPLE
 var baseURL = window.location.origin;
 var mainURL = baseURL + '/contactform';
@@ -69,9 +68,6 @@ $.ajax({
     error: function(error) {
         console.log(error);
     }
-        });
-    });
 });
 
 
-*/
