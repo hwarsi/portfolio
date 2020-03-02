@@ -299,8 +299,8 @@ def complexfeature():
     for key in company:
         print(key)'''
 
-@portfolio_app.route('/postjob', methods=['POST'])
-def postJobData():
+@portfolio_app.route('/addJob', methods=['POST'])
+def addJob():
     try:
        
         ajax_data = request.get_json()

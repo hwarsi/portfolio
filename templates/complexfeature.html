@@ -6,16 +6,17 @@
      </head>
     <body>
         <div class="table">
-                <button id="button"> <img src="{{ url_for('static', filename='img/plus.png') }}" width="50px" height="50px"></button>
+                <button class="addNewRow"> <img src="{{ url_for('static', filename='img/plus.png') }}" width="50px" height="50px"></button>
                 <div class="headers tablerow">
                     <div class="rowitem">Position</div>
                     <div class="rowitem">Company</div>
                     <div class="rowitem">Description</div>
                     <div class="rowitem">Button</div>
                 </div>
+                {% set count = 1 %}
                 {% for i in range(job|length) %}
-                <div class="tablerow">
-                    <div class = "color"  class="rowitem" id="positionz">{{(job[i]["position"])}}</div>
+                <div class="tablerow" name={count}>
+                    <div class = "color"  class="rowitem " id="positionz">{{(job[i]["position"])}}</div>
                     <div class= "color"  class="rowitem" id="companyz">{{(job[i]["company"])}}</div>
                     <div class= "color"  class="rowitem" id="descriptionz">{{(job[i]["description"])}}</div>
                     <button class="delete"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button>
@@ -25,8 +26,9 @@
                         <span class ="slider"></span>
                     </label>
                 </div>
+                {% set count = count + 1 %}
                 {% endfor %}
-                <div id="newrow">
+                <div id="newInputRow" style="display: none;">
                     <onsubmit="return newrow_form></onsubmit>
                     <input type="text" id="position" position="positionname"
                     placeholder="Position Name">
@@ -34,160 +36,23 @@
                     placeholder="Company Name">
                     <input type="text" id="description" position="descriptionname"
                     placeholder="Enter Description">
-                    <button class="submit">Submit</button>
+                    <button class="add">Add</button>
                 </div>
-            <div class=cloneitagain>
-            <div class="appenditherealso">
-                <div id="appendposition" class = "colors"  class="rowitem"></div>
-                <div id="appendcompany" class = "colors"  class="rowitem" ></div>
-                <div id="appenddescription" class = "colors"  class="rowitem"></div> 
-                <button class="deletenewrow"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button> 
-                <button class="editnewrow">Edit</button>
-                <label class="switch_new_row">
-                    <input type="checkbox">
-                    <span class ="slider"></span>
-                </label>
-
-          
+                <div class="tablerow newTableRow" style="display: none;">
+                    <div id="positionz" class = "colors rowitem"></div>
+                    <div id="companyz" class = "colors rowitem" ></div>
+                    <div id="descriptionz" class = "colors rowitem"></div> 
+                    <button class="deletenewrow"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button> 
+                    <button class="editnewrow">Edit</button>
+                    <label class="switch_new_row">
+                        <input type="checkbox">
+                        <span class ="slider"></span>
+                    </label>
                 </div>
-            <div class="appendithere"></div>
             </div>
         </div>    
         </body>
-    <script>
-    $("#newrow").hide();
-    $(".appenditherealso").hide();
-    $("#button").click(function(){
-        $(this).parent().find("#newrow").clone().appendTo(".appendithere");
-        $(this).parent().find("#newrow").show();
-        $(this).parent().find(".appenditherealso").hide();
-        $(this).parent().find(".submit").click(function(){
-            var position_data = $("#position").val();
-            var company_data = $("#company").val();
-            var description_data = $("#description").val();
-            console.log(position_data);
-            console.log(company_data);
-            console.log(description_data);
-            if (position_data === '' || company_data === '' || description_data === '') {
-            alert("Please Fill Required Fields");
-            return false;
-        } else{
-            $("#appendposition").text(position_data);
-            $("#appendcompany").text(company_data);
-            $("#appenddescription").text(description_data);
-            $(".appenditherealso").show();
-            $("#newrow").hide();  
-        }   
-
-        var new_job_data = {'position':position_data, 'company':company_data, 'description':description_data};
-        var baseURL = window.location.origin; 
-        var Post_URL = baseURL + '/postjob';
-
-        $.ajax({
-            method: 'POST',
-            url: Post_URL,
-            data: JSON.stringify(new_job_data),
-            contentType: "application/json",
-            dataType: 'json',
-            success: function(msg) {
-                console.log(msg)   
-                console.log('SUCCESS REACHED API!');
-                if (msg === 'Failed') {
-                    alert ('Try again later! Failed to receive info!')
-                } else {
-                    alert('Job Info Has Been Saved!');
-                }
-            },
-            error: function(error) {
-                console.log(error);
-                alert('FAILED TO REACH API!');
-            }
-        });
-    });
-    });
-    $(".delete").click(function(){
-        $(this).parent().find("#positionz").remove();
-        $(this).parent().find("#companyz").remove();
-        $(this).parent().find("#descriptionz").remove();
-        alert("You have deleted the row");
-    });
-    $(".edit").click(function(){
-        var position = $("#positionz");
-        var company =  $("#companyz");
-        var description = $("#descriptionz");
-        $(this).parent().find("#positionz").attr('contenteditable', 'true');
-        $(this).parent().find("#positionz").click(function(){
-            $(this).parent().find("#positionz").css({'background':'red'});
-            $(this).parent().find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
-            $(this).parent().find("#companyz").css({'background':'rgb(190, 185, 185)'});
-            alert("You are now editing the position");
-        });
-        $(this).parent().find("#companyz").attr('contenteditable', 'true');
-        $(this).parent().find("#companyz").click(function(){
-            $(this).parent().find("#companyz").css({'background':'red'});
-            $(this).parent().find("#positionz").css({'background':'rgb(190, 185, 185)'});
-            $(this).parent().find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
-            alert("You are now editing the company");
-        });
-        $(this).parent().find("#descriptionz").attr('contenteditable', 'true');
-        $(this).parent().find("#descriptionz").click(function(){
-            $(this).parent().find("#descriptionz").css({'background':'red'});
-            $(this).parent().find("#companyz").css({'background':'rgb(190, 185, 185)'});
-            $(this).parent().find("#positionz").css({'background':'rgb(190, 185, 185)'});
-            alert("You are now editing the description")
-        });
-        alert("You can now start editing");
-    });
-    $('.switch').on('click', function() {
-    var click = $(this).data('clicks');
-
-    if (click) {
-        $(this).parent().find("#positionz").css({'background':'yellow'});
-        $(this).parent().find("#companyz").css({'background':'yellow'});
-        $(this).parent().find("#descriptionz").css({'background':'yellow'});    
-    } else {
-        $(this).parent().find("#positionz").css({'background':'rgb(190, 185, 185)'});
-        $(this).parent().find("#companyz").css({'background':'rgb(190, 185, 185)'});
-        $(this).parent().find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
-        };
-        $(this).data('clicks', !click);
-        console.log(click);
-  });
-    $(".switch_new_row").click(function(){
-        $(this).parent().find("#appendposition").css({'background':'yellow'});
-        $(this).parent().find("#appendcompany").css({'background':'yellow'});
-        $(this).parent().find("#appenddescription").css({'background':'yellow'});
-        alert("You have highlighted the row");
-    });
-    $(".editnewrow").click(function(){
-        var appendposition = $("#appendposition");
-        var appendcompany =  $("#appendcompany");
-        var appenddescription = $("#appenddescription");
-        $(this).parent().find("#appendposition").attr('contenteditable', 'true');
-        appendposition.click(function(){
-            $(this).parent().find("#appendposition").css({'background':'red'});
-            $(this).parent().find("#appenddescription").css({'background':'rgb(190, 185, 185)'});
-            alert("You are now editing the position")
-        });
-        $(this).parent().find("#appendcompany").attr('contenteditable', 'true');
-        appendcompany.click(function(){
-            $(this).parent().find("#appendcompany").css({'background':'red'});
-            $(this).parent().find("#appenddescription").css({'background':'rgb(190, 185, 185)'});
-            $(this).parent().find("#appendposition").css({'background':'rgb(190, 185, 185)'});
-            alert("You are now editing the company")
-        });
-        $(this).parent().find("#appenddescription").attr('contenteditable', 'true');
-        appenddescription.click(function(){
-            $(this).parent().find("#appenddescription").css({'background':'red'});
-            $(this).parent().find("#appendcompany").css({'background':'rgb(190, 185, 185)'});
-            $(this).parent().find("#appendposition").css({'background':'rgb(190, 185, 185)'});
-
-            alert("You are now editing the description")
-        });
-        alert("You can now start editing");
-    });
-
-    </script>
+    <script src="{{ url_for('static', filename='js/complex.js') }}"></script>
 </html>
 
 
