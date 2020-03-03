@@ -15,10 +15,10 @@
                 </div>
                 {% set count = 1 %}
                 {% for i in range(job|length) %}
-                <div class="tablerow" name={count}>
-                    <div class = "color"  class="rowitem " class="positionz">{{(job[i]["position"])}}</div>
-                    <div class= "color"  class="rowitem" class="companyz">{{(job[i]["company"])}}</div>
-                    <div class= "color"  class="rowitem" class="descriptionz">{{(job[i]["description"])}}</div>
+                <div class="tablerow" name={{count}}>
+                    <div class="positionz colors rowitem">{{(job[i]["position"])}}</div>
+                    <div class="companyz colors rowitem">{{(job[i]["company"])}}</div>
+                    <div class="descriptionz colors rowitem">{{(job[i]["description"])}}</div>
                     <button class="delete"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button>
                     <button class="edit">Edit</button>
                     <label class="switch">
@@ -28,26 +28,27 @@
                 </div>
                 {% set count = count + 1 %}
                 {% endfor %}
-                <div id="newInputRow" style="display: none;">
-                    <onsubmit="return newrow_form></onsubmit>
-                    <input type="text" id="position" position="positionname"
-                    placeholder="Position Name">
-                    <input type="text" id="company" position="companyname"
-                    placeholder="Company Name">
-                    <input type="text" id="description" position="descriptionname"
-                    placeholder="Enter Description">
-                    <button class="add">Add</button>
-                </div>
-                <div class="tablerow newTableRow" style="display: none;">
-                    <div class="positionz" class = "colors rowitem"></div>
-                    <div class="companyz" class = "colors rowitem" ></div>
-                    <div class ="descriptionz" class = "colors rowitem"></div> 
-                    <button class="deletenewrow"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button> 
-                    <button class="editnewrow">Edit</button>
-                    <label class="switch_new_row">
-                        <input type="checkbox">
-                        <span class ="slider"></span>
-                    </label>
+                <div class='cloneRows' style="display: none;">
+                    <div class="newInputRow">
+                        <input type="text" class="position" position="positionname"
+                        placeholder="Position Name">
+                        <input type="text" class="company" position="companyname"
+                        placeholder="Company Name">
+                        <input type="text" class="description" position="descriptionname"
+                        placeholder="Enter Description">
+                        <button class="add">Add</button>
+                    </div>
+                    <div class="newTableRow">
+                        <div class="positionz colors rowitem"></div>
+                        <div class="companyz colors rowitem" ></div>
+                        <div class = "descriptionz colors rowitem"></div> 
+                        <button class="deletenewrow"> <img src="{{ url_for('static', filename='img/minus.png') }}" width="40px" height="40px"></button> 
+                        <button class="edit">Edit</button>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class ="slider"></span>
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>    

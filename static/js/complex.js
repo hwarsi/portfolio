@@ -3,20 +3,26 @@
 $(".addNewRow").click(function(){
     // Find the last element in tablerow
     var lastElement = $(this).parent().find('.tablerow').last();
-    var lastCounter = lastElement.attr("name");
+    var lastCounter = Number(lastElement.attr("name"));
 
     // Give new counter value
     var newCounter = lastCounter + 1;
 
     // Make a new row and it to the table
-    var newRow = $(this).parent().find("#newInputRow").clone();
+    var cloneRows = $('.table').find('.cloneRows');
+    var newRow = cloneRows.find(".newInputRow").clone();
     newRow.attr("name", newCounter);
     newRow.appendTo(".table");
 });
 
-$(".add").click(function(){
+
+$(".table").off('click').on('click', '.add', function(){
     var parentEle = $(this).parent();
+    var cloneRows = $('.table').find('.cloneRows');
+    console.log(this);
+    console.log(parentEle);
     var currentCounter = parentEle.attr('name');
+    console.log(currentCounter);
 
     var position_data = parentEle.find(".position").val();
     var company_data = parentEle.find(".company").val();
@@ -48,19 +54,20 @@ $(".add").click(function(){
             if (msg === 'Failed') {
                 alert ('Try again later! Failed to receive info!')
             } else {
-                var newTableRow = $('.newTableRow').clone();
+                var newTableRow = cloneRows.find('.newTableRow').clone();
+                newTableRow.attr('name', currentCounter)
+                newTableRow.find(".positionz").text(position_data);
+                newTableRow.find(".companyz").text(company_data);
+                newTableRow.find(".descriptionz").text(description_data);
+                newTableRow.removeClass('newTableRow');
+                newTableRow.addClass('tablerow');
+                console.log(newTableRow);
                 newTableRow.appendTo(".table");
 
-                var lastElement = parentEle.parent().find('.tablerow').last();
-                lastElement.attr('name', currentCounter)
-                lastElement.find(".positionz").text(position_data);
-                lastElement.find(".companyz").text(company_data);
-                lastElement.find(".descriptionz").text(description_data);
-                lastElement.removeClass('newTableRow');
-
                 alert('Job Info Has Been Saved!');
-   
+
                 // Delete current input element
+                console.log(parentEle);
                 parentEle.remove();
             }
         },
