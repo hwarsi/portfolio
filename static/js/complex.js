@@ -18,9 +18,9 @@ $(".add").click(function(){
     var parentEle = $(this).parent();
     var currentCounter = parentEle.attr('name');
 
-    var position_data = parentEle.find("#position").val();
-    var company_data = parentEle.find("#company").val();
-    var description_data = parentEle.find("#description").val();
+    var position_data = parentEle.find(".position").val();
+    var company_data = parentEle.find(".company").val();
+    var description_data = parentEle.find(".description").val();
     console.log(position_data);
     console.log(company_data);
     console.log(description_data);
@@ -53,9 +53,9 @@ $(".add").click(function(){
 
                 var lastElement = parentEle.parent().find('.tablerow').last();
                 lastElement.attr('name', currentCounter)
-                lastElement.find("#positionz").text(position_data);
-                lastElement.find("#companyz").text(company_data);
-                lastElement.find("#descriptionz").text(description_data);
+                lastElement.find(".positionz").text(position_data);
+                lastElement.find(".companyz").text(company_data);
+                lastElement.find(".descriptionz").text(description_data);
                 lastElement.removeClass('newTableRow');
 
                 alert('Job Info Has Been Saved!');
@@ -72,50 +72,51 @@ $(".add").click(function(){
 });
 
 $(".delete").click(function(){
-    $(this).parent().find("#positionz").remove();
-    $(this).parent().find("#companyz").remove();
-    $(this).parent().find("#descriptionz").remove();
+    $(this).parent().find(".positionz").remove();
+    $(this).parent().find(".companyz").remove();
+    $(this).parent().find(".descriptionz").remove();
     alert("You have deleted the row");
 });
 
 $(".edit").click(function(){
-    var position = $("#positionz");
-    var company =  $("#companyz");
-    var description = $("#descriptionz");
-    $(this).parent().find("#positionz").attr('contenteditable', 'true');
-    $(this).parent().find("#positionz").click(function(){
-        $(this).parent().find("#positionz").css({'background':'red'});
-        $(this).parent().find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
-        $(this).parent().find("#companyz").css({'background':'rgb(190, 185, 185)'});
+    var position = $(".positionz");
+    var company =  $(".companyz");
+    var description = $(".descriptionz");
+    $(this).parent().find(".positionz").attr('contenteditable', 'true');
+    $(this).parent().find(".positionz").click(function(){
+        $(this).parent().find(".positionz").css({'background':'red'});
+        $(this).parent().find(".descriptionz").css({'background':'rgb(190, 185, 185)'});
+        $(this).parent().find(".companyz").css({'background':'rgb(190, 185, 185)'});
         alert("You are now editing the position");
     });
-    $(this).parent().find("#companyz").attr('contenteditable', 'true');
-    $(this).parent().find("#companyz").click(function(){
-        $(this).parent().find("#companyz").css({'background':'red'});
-        $(this).parent().find("#positionz").css({'background':'rgb(190, 185, 185)'});
-        $(this).parent().find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
+    $(this).parent().find(".companyz").attr('contenteditable', 'true');
+    $(this).parent().find(".companyz").click(function(){
+        $(this).parent().find(".companyz").css({'background':'red'});
+        $(this).parent().find(".positionz").css({'background':'rgb(190, 185, 185)'});
+        $(this).parent().find(".descriptionz").css({'background':'rgb(190, 185, 185)'});
         alert("You are now editing the company");
     });
-    $(this).parent().find("#descriptionz").attr('contenteditable', 'true');
-    $(this).parent().find("#descriptionz").click(function(){
-        $(this).parent().find("#descriptionz").css({'background':'red'});
-        $(this).parent().find("#companyz").css({'background':'rgb(190, 185, 185)'});
-        $(this).parent().find("#positionz").css({'background':'rgb(190, 185, 185)'});
+    $(this).parent().find(".descriptionz").attr('contenteditable', 'true');
+    $(this).parent().find(".descriptionz").click(function(){
+        $(this).parent().find(".descriptionz").css({'background':'red'});
+        $(this).parent().find(".companyz").css({'background':'rgb(190, 185, 185)'});
+        $(this).parent().find(".positionz").css({'background':'rgb(190, 185, 185)'});
         alert("You are now editing the description")
     });
     alert("You can now start editing");
 });
 
-$("#highlight").click(function(){
-    if($("#highlight").prop("checked") === true){
-        $(this).parent().find("#positionz").css({'background':'yellow'});
-        $(this).parent().find("#companyz").css({'background':'yellow'});
-        $(this).parent().find("#descriptionz").css({'background':'yellow'});
-        console.log(this);    
+$(".highlight").click(function(){
+    if($(".highlight").prop("checked") === true){
+        $(".positionz").css({'background':'yellow'});
+        $(".companyz").css({'background':'yellow'});
+        $(".descriptionz").css({'background':'yellow'});
+        console.log($(this).prop("checked"));    
     }
-    else if($("#highlight").prop("checked") === false){
-        $(this).parent().find("#positionz").css({'background':'rgb(190, 185, 185)'});
-        $(this).parent().find("#companyz").css({'background':'rgb(190, 185, 185)'});
-        $(this).parent().find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
+    else if($(".highlight").prop("checked") === false){
+        $(".positionz").css({'background':'rgb(190, 185, 185)'});
+        $(".companyz").css({'background':'rgb(190, 185, 185)'});
+        $(".descriptionz").css({'background':'rgb(190, 185, 185)'});
+        console.log($(this).prop("checked"));    
     };
 });
