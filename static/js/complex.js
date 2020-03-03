@@ -106,18 +106,15 @@ $(".edit").click(function(){
     alert("You can now start editing");
 });
 
-$('.switch').on('click', function() {
-    var click = $(this).data('clicks');
-
-    if (click) {
-        $(this).parent().find("#positionz").css({'background':'yellow'});
-        $(this).parent().find("#companyz").css({'background':'yellow'});
-        $(this).parent().find("#descriptionz").css({'background':'yellow'});    
-    } else {
-        $(this).parent().find("#positionz").css({'background':'rgb(190, 185, 185)'});
-        $(this).parent().find("#companyz").css({'background':'rgb(190, 185, 185)'});
-        $(this).parent().find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
+$(".highlight").click(function(){
+    if($(this).prop("checked") == true){
+        $(this).find("#positionz").css({'background':'yellow'});
+        $(this).find("#companyz").css({'background':'yellow'});
+        $(this).find("#descriptionz").css({'background':'yellow'});    
+    }
+    else if($(this).prop("checked") == false){
+        $(this).find("#positionz").css({'background':'rgb(190, 185, 185)'});
+        $(this).find("#companyz").css({'background':'rgb(190, 185, 185)'});
+        $(this).find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
     };
-        $(this).data('clicks', !click);
-        console.log(click);
 });
