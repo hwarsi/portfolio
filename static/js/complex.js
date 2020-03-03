@@ -106,15 +106,16 @@ $(".edit").click(function(){
     alert("You can now start editing");
 });
 
-$(".highlight").click(function(){
-    if($(this).prop("checked") == true){
-        $(this).find("#positionz").css({'background':'yellow'});
-        $(this).find("#companyz").css({'background':'yellow'});
-        $(this).find("#descriptionz").css({'background':'yellow'});    
+$("#highlight").click(function(){
+    if($("#highlight").prop("checked") === true){
+        $(this).parent().find("#positionz").css({'background':'yellow'});
+        $(this).parent().find("#companyz").css({'background':'yellow'});
+        $(this).parent().find("#descriptionz").css({'background':'yellow'});
+        console.log(this);    
     }
-    else if($(this).prop("checked") == false){
-        $(this).find("#positionz").css({'background':'rgb(190, 185, 185)'});
-        $(this).find("#companyz").css({'background':'rgb(190, 185, 185)'});
-        $(this).find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
+    else if($("#highlight").prop("checked") === false){
+        $(this).parent().find("#positionz").css({'background':'rgb(190, 185, 185)'});
+        $(this).parent().find("#companyz").css({'background':'rgb(190, 185, 185)'});
+        $(this).parent().find("#descriptionz").css({'background':'rgb(190, 185, 185)'});
     };
 });
