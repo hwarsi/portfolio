@@ -5,7 +5,7 @@ from flask import Flask, render_template, jsonify, request, url_for
 from flask_wtf import FlaskForm
 from wtforms import SelectField, SubmitField
 from model import connectToDB, connectToDB_2
-from complex_feature import job
+
 
 portfolio_app = Flask(__name__)
 portfolio_app.config['SECRET_KEY'] = 'Thisisasecret!'
@@ -308,7 +308,7 @@ def addJob():
 
         db = connectToDB_2()
 
-        collection_remote_jobs = db.collection_remote_jobs
+        collection_remote_jobs = db.remote_jobs
         print(collection_remote_jobs)
 
         collection_remote_jobs.insert_one(ajax_data)

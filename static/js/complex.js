@@ -113,17 +113,17 @@ $(".edit").click(function(){
     alert("You can now start editing");
 });
 
-$(".highlight").click(function(){
+$(".tablerow").off('click').on('click', '.highlight', function(){
     if($(".highlight").prop("checked") === true){
-        $(".positionz").css({'background':'yellow'});
-        $(".companyz").css({'background':'yellow'});
-        $(".descriptionz").css({'background':'yellow'});
+        $(this).parent().find(".positionz").css({'background':'yellow'});
+        $(this).parent().find(".companyz").css({'background':'yellow'});
+        $(this).parent().find(".descriptionz").css({'background':'yellow'});
         console.log($(this).prop("checked"));    
     }
     else if($(".highlight").prop("checked") === false){
-        $(".positionz").css({'background':'rgb(190, 185, 185)'});
-        $(".companyz").css({'background':'rgb(190, 185, 185)'});
-        $(".descriptionz").css({'background':'rgb(190, 185, 185)'});
+        $(this).parent().find(".positionz").css({'background':'rgb(190, 185, 185)'});
+        $(this).parent().find(".companyz").css({'background':'rgb(190, 185, 185)'});
+        $(this).parent().find(".descriptionz").css({'background':'rgb(190, 185, 185)'});
         console.log($(this).prop("checked"));    
     };
 });
