@@ -14,7 +14,7 @@
                     <div class="rowitem">Button</div>
                 </div>
                 {% set count = 1 %}
-                {% for i in range(job|length) %}
+                {% for i in range(counter) %}
                 <div class="tablerow" name={{count}}>
                     <div class="positionz colors rowitem">{{(job[i]["position"])}}</div>
                     <div class="companyz colors rowitem">{{(job[i]["company"])}}</div>
