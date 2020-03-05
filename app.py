@@ -257,12 +257,45 @@ def addJob():
         print(traceback.format_exc())
         return jsonify('Failed!')
 
-@portfolio_app.route('/getjob', methods=['GET'])
-def GetJobData():
-    response = requests.get('https://remoteok.io/api?ref=producthunt')
-    json_object = response.json()
-    length = len(json_object)
-    print(length)
+@portfolio_app.route('/deleteJob', methods=['POST'])
+def deleteJob():
+    try:
+       
+        ajax_data = request.get_json()
+        print(request.get_json())
+
+        db = connectToDB()
+
+        collection_remote_jobs = db.remote_jobs
+        print(collection_remote_jobs)
+
+        collection_remote_jobs.delete_one(ajax_data)
+
+        return jsonify('Success it worked')
+    except Exception as e:
+        print(e)
+        print(traceback.format_exc())
+        return jsonify('Failed!')
+
+@portfolio_app.route('/editJob', methods=['POST'])
+def deleteJob():
+    try:
+       
+        ajax_data = request.get_json()
+        print(request.get_json())
+
+        db = connectToDB()
+
+        collection_remote_jobs = db.remote_jobs
+        print(collection_remote_jobs)
+
+        collection_remote_jobs.update_one(ajax_data)
+
+        return jsonify('Success it worked')
+    except Exception as e:
+        print(e)
+        print(traceback.format_exc())
+        return jsonify('Failed!')
 
 if __name__ == "__main__":
     portfolio_app.run(debug=True)

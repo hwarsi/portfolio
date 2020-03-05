@@ -79,10 +79,29 @@ $(".table").off('click').on('click', '.add', function(){
 });
 
 $(".delete").click(function(){
+    var position_data = $(this).parent().find(".positionz").text();
+    var company_data = $(this).parent().find(".companyz").text();
+    var description_data = $(this).parent().find(".descriptionz").text();
+    console.log(position_data);
     $(this).parent().find(".positionz").remove();
     $(this).parent().find(".companyz").remove();
     $(this).parent().find(".descriptionz").remove();
     alert("You have deleted the row");
+    var delete_job_data = {'position':position_data, 'company':company_data, 'description':description_data};
+    var baseURL = window.location.origin; 
+    var Post_URL = baseURL + '/deleteJob';
+    $.ajax({
+        method: 'POST',
+        url: Post_URL,
+        data: JSON.stringify(delete_job_data),
+        contentType: "application/json",
+        dataType: 'json',
+        success: function(msg) {
+            console.log(msg)   
+            console.log('SUCCESS REACHED API!');
+            alert('Job Info Has Been Delete!');
+        }
+    });
 });
 
 $(".edit").click(function(){
