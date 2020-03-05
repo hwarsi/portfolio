@@ -109,6 +109,7 @@ $(".edit").click(function(){
     var company =  $(".companyz");
     var description = $(".descriptionz");
     $(this).parent().find(".positionz").attr('contenteditable', 'true');
+    var position_data = $(this).parent().find(".positionz").text();
     $(this).parent().find(".positionz").click(function(){
         $(this).parent().find(".positionz").css({'background':'red'});
         $(this).parent().find(".descriptionz").css({'background':'rgb(190, 185, 185)'});
@@ -116,6 +117,7 @@ $(".edit").click(function(){
         alert("You are now editing the position");
     });
     $(this).parent().find(".companyz").attr('contenteditable', 'true');
+    var company_data = $(this).parent().find(".companyz").text();
     $(this).parent().find(".companyz").click(function(){
         $(this).parent().find(".companyz").css({'background':'red'});
         $(this).parent().find(".positionz").css({'background':'rgb(190, 185, 185)'});
@@ -123,6 +125,7 @@ $(".edit").click(function(){
         alert("You are now editing the company");
     });
     $(this).parent().find(".descriptionz").attr('contenteditable', 'true');
+    var description_data = $(this).parent().find(".descriptionz").text();
     $(this).parent().find(".descriptionz").click(function(){
         $(this).parent().find(".descriptionz").css({'background':'red'});
         $(this).parent().find(".companyz").css({'background':'rgb(190, 185, 185)'});
@@ -130,6 +133,20 @@ $(".edit").click(function(){
         alert("You are now editing the description")
     });
     alert("You can now start editing");
+    var edit_job_data = {'position':position_data, 'company':company_data, 'description':description_data};
+    var baseURL = window.location.origin; 
+    var Post_URL = baseURL + '/editJob';
+    $.ajax({
+        method: 'POST',
+        url: Post_URL,
+        data: JSON.stringify(edit_job_data),
+        contentType: "application/json",
+        dataType: 'json',
+        success: function(msg) {
+            console.log(msg)   
+            console.log('SUCCESS REACHED API!');
+        }
+    });
 });
 
 $(".tablerow").off('click').on('click', '.highlight', function(){

@@ -278,7 +278,7 @@ def deleteJob():
         return jsonify('Failed!')
 
 @portfolio_app.route('/editJob', methods=['POST'])
-def deleteJob():
+def editJob():
     try:
        
         ajax_data = request.get_json()
@@ -289,7 +289,7 @@ def deleteJob():
         collection_remote_jobs = db.remote_jobs
         print(collection_remote_jobs)
 
-        collection_remote_jobs.update_one(ajax_data)
+        collection_remote_jobs.update(ajax_data)
 
         return jsonify('Success it worked')
     except Exception as e:
