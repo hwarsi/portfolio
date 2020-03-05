@@ -289,7 +289,7 @@ def editJob():
         collection_remote_jobs = db.remote_jobs
         print(collection_remote_jobs)
 
-        collection_remote_jobs.update(ajax_data)
+        collection_remote_jobs.update()
 
         return jsonify('Success it worked')
     except Exception as e:
