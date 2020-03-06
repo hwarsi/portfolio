@@ -56,9 +56,9 @@ $(".table").off('click').on('click', '.add', function(){
             } else {
                 var newTableRow = cloneRows.find('.newTableRow').clone();
                 newTableRow.attr('name', currentCounter)
-                newTableRow.parent().find(".positionz").text(position_data);
-                newTableRow.find(".companyz").text(company_data);
-                newTableRow.find(".descriptionz").text(description_data);
+                newTableRow.find(".positionz").find("cellvalue").text(position_data);
+                newTableRow.find(".companyz").find(".cellvalue").text(company_data);
+                newTableRow.find(".descriptionz").find(".cellvalue").text(description_data);
                 newTableRow.removeClass('newTableRow');
                 newTableRow.addClass('tablerow');
                 console.log(newTableRow);
