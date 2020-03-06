@@ -56,7 +56,7 @@ $(".table").off('click').on('click', '.add', function(){
             } else {
                 var newTableRow = cloneRows.find('.newTableRow').clone();
                 newTableRow.attr('name', currentCounter)
-                newTableRow.find(".positionz").text(position_data);
+                newTableRow.parent().find(".positionz").text(position_data);
                 newTableRow.find(".companyz").text(company_data);
                 newTableRow.find(".descriptionz").text(description_data);
                 newTableRow.removeClass('newTableRow');
@@ -79,9 +79,9 @@ $(".table").off('click').on('click', '.add', function(){
 });
 
 $(".delete").click(function(){
-    var position_data = $(this).parent().find(".positionz").text();
-    var company_data = $(this).parent().find(".companyz").text();
-    var description_data = $(this).parent().find(".descriptionz").text();
+    var position_data = $(this).parent().find(".gposition").text();
+    var company_data = $(this).parent().find(".gcompany").text();
+    var description_data = $(this).parent().find(".gdescription").text();
     console.log(position_data);
     $(this).parent().find(".positionz").remove();
     $(this).parent().find(".companyz").remove();
@@ -104,16 +104,17 @@ $(".delete").click(function(){
     });
 });
 
-$(".table").off('click').on('click', '.editposition', function(){
-    var position = $(".positionz");
-    var company =  $(".companyz");
-    var description = $(".descriptionz");
-    $(this).parent().find(".positionz").attr('contenteditable', 'true');
-    $(this).parent().find(".positionz").css({'background':'red'});
-    $(this).parent().find(".descriptionz").css({'background':'rgb(190, 185, 185)'});
+
+
+$(".table").off('click').on('click', '.editdescription', function(){
+    var description = $(this).parent().find(".descriptionz").text();
+    console.log(position);
+    $(this).parent().find(".descriptionz").attr('contenteditable', 'true');
+    $(this).parent().find(".descriptionz").css({'background':'red'});
     $(this).parent().find(".companyz").css({'background':'rgb(190, 185, 185)'});
-    alert("You are now editing the position");
-    });
+    $(this).parent().find(".positionz").css({'background':'rgb(190, 185, 185)'});
+    alert("You are now editing the description");
+});
         
 
 $(".tablerow").off('click').on('click', '.highlight', function(){
@@ -129,4 +130,15 @@ $(".tablerow").off('click').on('click', '.highlight', function(){
         $(this).parent().find(".descriptionz").css({'background':'rgb(190, 185, 185)'});
         console.log($(this).prop("checked"));    
     };
+});
+
+$(".table").off('click').on('click', '.edit', function(){
+    var currentCell = $(this).parent().find(".cellvalue");
+    var cellValue = currentCell.text();
+    console.log(cellValue);
+    currentCell.attr('contenteditable', 'true');
+    currentCell.css({'background':'red'});
+    currentCell.css({'background':'rgb(190, 185, 185)'});
+    currentCell.css({'background':'rgb(190, 185, 185)'});
+    alert("You are now editing the position");
 });
