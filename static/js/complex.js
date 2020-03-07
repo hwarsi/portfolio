@@ -1,5 +1,3 @@
-// Starting highlight
-
 $(".addNewRow").click(function(){
     // Find the last element in tablerow
     var lastElement = $(this).parent().find('.tablerow').last();
@@ -106,39 +104,52 @@ $(".delete").click(function(){
 
 
 
-$(".table").off('click').on('click', '.editdescription', function(){
-    var description = $(this).parent().find(".descriptionz").text();
-    console.log(position);
-    $(this).parent().find(".descriptionz").attr('contenteditable', 'true');
-    $(this).parent().find(".descriptionz").css({'background':'red'});
-    $(this).parent().find(".companyz").css({'background':'rgb(190, 185, 185)'});
-    $(this).parent().find(".positionz").css({'background':'rgb(190, 185, 185)'});
-    alert("You are now editing the description");
-});
-        
 
-$(".tablerow").off('click').on('click', '.highlight', function(){
-    if($(".highlight").prop("checked") === true){
-        $(this).parent().find(".positionz").css({'background':'yellow'});
-        $(this).parent().find(".companyz").css({'background':'yellow'});
-        $(this).parent().find(".descriptionz").css({'background':'yellow'});
-        console.log($(this).prop("checked"));    
-    }
-    else if($(".highlight").prop("checked") === false){
-        $(this).parent().find(".positionz").css({'background':'rgb(190, 185, 185)'});
-        $(this).parent().find(".companyz").css({'background':'rgb(190, 185, 185)'});
-        $(this).parent().find(".descriptionz").css({'background':'rgb(190, 185, 185)'});
-        console.log($(this).prop("checked"));    
-    };
-});
 
 $(".table").off('click').on('click', '.edit', function(){
     var currentCell = $(this).parent().find(".cellvalue");
     var cellValue = currentCell.text();
     console.log(cellValue);
     currentCell.attr('contenteditable', 'true');
-    currentCell.css({'background':'red'});
-    currentCell.css({'background':'rgb(190, 185, 185)'});
-    currentCell.css({'background':'rgb(190, 185, 185)'});
-    alert("You are now editing the position");
+    alert("You can now start editing");
 });
+$(".submitedit").click(function(){
+    console.log("penis")
+    var position_data = $(this).parent().find(".gposition").text();
+    var company_data = $(this).parent().find(".gcompany").text();
+    var description_data = $(this).parent().find(".gdescription").text();
+    console.log(position_data);
+    console.log(company_data);
+    console.log(description_data);
+    var edit_job_data = {'position':position_data, 'company':company_data, 'description':description_data};
+    var baseURL = window.location.origin; 
+    var Post_URL = baseURL + '/editJob';
+    $.ajax({
+        method: 'POST',
+        url: Post_URL,
+        data: JSON.stringify(edit_job_data),
+        contentType: "application/json",
+        dataType: 'json',
+        success: function(msg) {
+            console.log(msg)   
+            console.log('SUCCESS REACHED API!');
+            alert('Job Info Has Been Delete!');
+        }
+});
+});
+
+$(".table").off('click').on('click', '.highlight', function(){
+    console.log("balls");
+    if($(this).prop("checked") === true){
+        $(this).parent().parent().find(".gposition").css({'background':'yellow'});
+        $(this).parent().parent().find(".gcompany").css({'background':'yellow'});
+        $(this).parent().parent().find(".gdescription").css({'background':'yellow'});
+    }
+    else if($(this).prop("checked") === false){
+        $(this).parent().parent().find(".gposition").css({'background':'rgb(190, 185, 185)'});
+        $(this).parent().parent().find(".gcompany").css({'background':'rgb(190, 185, 185)'});
+        $(this).parent().parent().find(".gdescription").css({'background':'rgb(190, 185, 185)'});
+    }
+});
+
+

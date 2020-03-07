@@ -1,7 +1,7 @@
 .table {
     display: flex;
     flex-flow: column nowrap; /* prevents line breaks in columns*/
-    border: 3px solid .f2f2f2; /*border around the table */
+    border: 3px solid #f2f2f2; /*border around the table */
     font-size: 1rem; 
     margin: .5rem;
     line-height: 1.5; /*used it to set distances between lines of text*/
@@ -130,7 +130,7 @@ input.placeholder{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: .ccc;
+    background-color: #ccc;
     transition: .4s;
     border-radius: 34px;
 }
@@ -152,7 +152,7 @@ input.placeholder{
 
 input:checked + .slider
 {
-    background-color: .ff278c;
+    background-color: #ff278c;
 
 }
 input:checked + .slider:before

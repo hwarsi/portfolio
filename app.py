@@ -289,7 +289,11 @@ def editJob():
         collection_remote_jobs = db.remote_jobs
         print(collection_remote_jobs)
 
-        collection_remote_jobs.update()
+        collection_remote_jobs.update_one(
+    {"$set":
+        {"position": position_data}
+    },upsert=True
+        )
 
         return jsonify('Success it worked')
     except Exception as e:
