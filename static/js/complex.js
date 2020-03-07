@@ -138,8 +138,7 @@ $(".submitedit").click(function(){
 });
 });
 
-$(".table").off('click').on('click', '.highlight', function(){
-    console.log("balls");
+$(".tablerow").off('click').on('click', '.highlight', function(){
     if($(this).prop("checked") === true){
         $(this).parent().parent().find(".gposition").css({'background':'yellow'});
         $(this).parent().parent().find(".gcompany").css({'background':'yellow'});

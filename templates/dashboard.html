@@ -6,74 +6,85 @@
 
 
     </head>
-    <body>
-        <div id="outercontainer">
-            <div id = "headers">
-                <p>Summary</p>
-                <p>Temperature</p>
-                <p>Percipitation</p>
-                <p>Wind</p>
+</head>
+<body>
+    <div id="outercontainer">
+        <div id = "headers">
+            <p>Summary</p>
+            <p>Temperature</p>
+            <p>Percipitation</p>
+            <p>Wind</p>
+        </div>
+        <div id="innercontainer">
+            <div>
+                <h3 id="day1"></h3> 
+                <img src={{day1_img}} width="120px", height="100px">  
+                <p>{{icon['icons'][0]}}</p>
+                <p>{{ temperature['temperatures'][0]}}</p> 
+                <p>{{wind['winds'][0]}}</p>
+                <p>{{rain['rains'][0]}}</p>
             </div>
-            <div id="innercontainer">
-                <div>
-                    <h3 id="day1"></h3> 
-                    <img src={{day1_img}} width="120px", height="100px">  
-                    <p>{{icon['day1_icon']}}</p>
-                    <p>{{ temperature['day1_temperature'] }}</p>
-                    <p>{{wind['day1_wind']}}</p>
-                    <p>{{rain['day1_rain']}}</p>    
-                </div>
-                <div>
-                    <h3 id="day2"></h3> 
-                    <img src={{day2_img}} width="120px", height="100px">  
-                    <p>{{icon['day2_icon']}}</p>
-                    <p>{{ temperature['day2_temperature'] }}</p>
-                    <p>{{wind['day2_wind']}}</p>
-                    <p>{{rain['day2_rain']}}</p>   
-                </div>
-                <div>
-                    <h3 id="day3"></h3> 
-                    <img src={{day3_img}} width="120px", height="100px">  
-                    <p>{{icon['day3_icon']}}</p>
-                    <p>{{ temperature['day3_temperature'] }}</p>
-                    <p>{{wind['day3_wind']}}</p>
-                    <p>{{rain['day3_rain']}}</p>   
-                </div>
-                <div>
-                    <h3 id="day4"></h3> 
-                    <img src={{day4_img}} width="120px", height="100px">  
-                    <p>{{icon['day4_icon']}}</p>
-                    <p>{{ temperature['day4_temperature'] }}</p>
-                    <p>{{wind['day4_wind']}}</p>
-                    <p>{{rain['day4_rain']}}</p>   
-                </div>
-                <div>
-                    <h3 id="day5"></h3> 
-                    <img src={{day5_img}} width="120px", height="100px">   
-                    <p>{{icon['day5_icon']}}</p>
-                    <p>{{ temperature['day5_temperature'] }}</p>
-                    <p>{{wind['day5_wind']}}</p>
-                    <p>{{rain['day5_rain']}}</p>  
-                </div>
-                <div>
-                    <h3 id="day6"></h3> 
-                    <img src={{day6_img}} width="120px", height="100px">  
-                    <p>{{icon['day6_icon']}}</p>
-                    <p>{{ temperature['day6_temperature'] }}</p>
-                    <p>{{wind['day6_wind']}}</p>
-                    <p>{{rain['day6_rain']}}</p>   
-                </div>
-                <div>
-                    <h3 id="day7"></h3> 
-                    <img src={{day7_img}} width="120px", height="100px"> 
-                    <p id="stop">{{icon['day7_icon']}}</p>
-                    <p>{{ temperature['day7_temperature'] }}</p>
-                    <p>{{wind['day7_wind']}}</p>
-                    <p>{{rain['day7_rain']}}</p>   
-                </div>
+            <div>
+                <h3 id="day2"></h3> 
+                <img src={{day2_img}} width="120px", height="100px"> 
+                <p>{{icon['icons'][1]}}</p>
+                <p>{{ temperature['temperatures'][1]}}</p> 
+                <p>{{wind['winds'][1]}}</p>
+                <p>{{rain['rains'][1]}}</p>
+            </div>
+            <div>
+                <h3 id="day3"></h3> 
+                <img src={{day3_img}} width="120px", height="100px"> 
+                <p>{{icon['icons'][2]}}</p> 
+                <p>{{ temperature['temperatures'][2]}}</p> 
+                <p>{{wind['winds'][2]}}</p>
+                <p>{{rain['rains'][2]}}</p>
+
+
+            </div>
+            <div>
+                <h3 id="day4"></h3> 
+                <img src={{day4_img}} width="120px", height="100px">  
+                <p>{{icon['icons'][3]}}</p>
+                <p>{{ temperature['temperatures'][3]}}</p>  
+                <p>{{wind['winds'][3]}}</p>
+                <p>{{rain['rains'][3]}}</p>
+
+
+            </div>
+            <div>
+                <h3 id="day5"></h3> 
+                <img src={{day5_img}} width="120px", height="100px">  
+                <p>{{icon['icons'][4]}}</p>
+                <p>{{ temperature['temperatures'][4]}}</p>  
+                <p>{{wind['winds'][4]}}</p>
+                <p>{{rain['rains'][4]}}</p>
+
+
+            </div>
+            <div>
+                <h3 id="day6"></h3> 
+                <img src={{day6_img}} width="120px", height="100px"> 
+                <p>{{icon['icons'][5]}}</p> 
+                <p>{{ temperature['temperatures'][5]}}</p>
+                <p>{{wind['winds'][5]}}</p>
+                <p>{{rain['rains'][5]}}</p>
+
+
+            </div>
+            <div>
+                <h3 id="day7"></h3> 
+                <img src={{day7_img}} width="120px", height="100px"> 
+                <p>{{icon['icons'][6]}}</p>
+                <p>{{ temperature['temperatures'][6]}}</p>  
+                <p>{{wind['winds'][6]}}</p>
+                <p>{{rain['rains'][6]}}</p>
+
+
             </div>
         </div>
-    </body>
+    </div>
+</body>
     <script type="text/javascript">
         function days() {
             var datez = new Date();
