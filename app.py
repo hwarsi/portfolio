@@ -156,17 +156,73 @@ def weather_api():
     sun_img = url_for('static', filename='img/sun.png')
     cloudy_img = url_for('static', filename='img/partly.png')
     print(temperature)
+    day_img = 1
+    print(icon)
     
-    if icon == "rain":
-        day_img = rain_img 
-    if icon == "clear-day":
-        day_img = sun_img
-    if icon == "cloudy":
-        day_img = cloudy_img
-    if icon == "partly-cloudy-day":
-        day_img = cloudy_img
+    if icon['icons'][6] == "rain":
+        day7_img = rain_img 
+    if icon['icons'][6] == "clear-day":
+        day7_img = sun_img
+    if icon['icons'][6] == "cloudy":
+        day7_img = cloudy_img
+    if icon['icons'][6] == "partly-cloudy-day":
+        day7_img = cloudy_img
+    
+    if icon['icons'][5] == "rain":
+        day6_img = rain_img 
+    if icon['icons'][5] == "clear-day":
+        day6_img = sun_img
+    if icon['icons'][5] == "cloudy":
+        day6_img = cloudy_img
+    if icon['icons'][5] == "partly-cloudy-day":
+        day6_img = cloudy_img
+    
+    if icon['icons'][4] == "rain":
+        day5_img = rain_img 
+    if icon['icons'][4] == "clear-day":
+        day5_img = sun_img
+    if icon['icons'][4] == "cloudy":
+        day5_img = cloudy_img
+    if icon['icons'][4] == "partly-cloudy-day":
+        day5_img = cloudy_img
 
-    return render_template('dashboard.html', temperature=temperature, wind=wind,rain=rain,icon=icon,rain_img=rain_img,sun_img=sun_img,cloudy_img=cloudy_img,day_img=day_img)
+    if icon['icons'][3] == "rain":
+        day4_img = rain_img 
+    if icon['icons'][3] == "clear-day":
+        day4_img = sun_img
+    if icon['icons'][3] == "cloudy":
+        day4_img = cloudy_img
+    if icon['icons'][3] == "partly-cloudy-day":
+        day4_img = cloudy_img
+    
+    if icon['icons'][2] == "rain":
+        day3_img = rain_img 
+    if icon['icons'][2] == "clear-day":
+        day3_img = sun_img
+    if icon['icons'][2] == "cloudy":
+        day3_img = cloudy_img
+    if icon['icons'][2] == "partly-cloudy-day":
+        day3_img = cloudy_img
+    
+    if icon['icons'][1] == "rain":
+        day2_img = rain_img 
+    if icon['icons'][1] == "clear-day":
+        day2_img = sun_img
+    if icon['icons'][1] == "cloudy":
+        day2_img = cloudy_img
+    if icon['icons'][1] == "partly-cloudy-day":
+        day2_img = cloudy_img
+    
+    if icon['icons'][0] == "rain":
+        day1_img = rain_img 
+    if icon['icons'][0] == "clear-day":
+        day1_img = sun_img
+    if icon['icons'][0] == "cloudy":
+        day1_img = cloudy_img
+    if icon['icons'][0] == "partly-cloudy-day":
+        day1_img = cloudy_img
+
+    return render_template('dashboard.html', temperature=temperature, wind=wind,rain=rain,icon=icon,rain_img=rain_img,sun_img=sun_img,cloudy_img=cloudy_img,day1_img=day1_img,day2_img=day2_img,day3_img=day3_img,day4_img=day4_img,day5_img=day5_img,day6_img=day6_img,day7_img=day7_img)
 
 '''
     if day7_icon == "rain":
