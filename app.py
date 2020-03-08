@@ -292,17 +292,19 @@ def oringinalJob():
         collection_remote_jobs = db.remote_jobs
 
 
-
+        return jsonify('Success it worked')
+    except Exception as e:
+        print(e)
+        print(traceback.format_exc())
+        return jsonify('Failed!')
 @portfolio_app.route('/editJob', methods=['POST'])
 def editJob():
     try:
-       
         ajax_data = request.get_json()
         jobs = {}
-        print(newjobs)
-
         jobs.update(ajax_data)
         print(jobs)
+        print(newjobs)
 
         db = connectToDB()
 
@@ -312,7 +314,7 @@ def editJob():
         print(collection_remote_jobs)
 
         collection_remote_jobs.update_one(
-    jobs,
+    newjobs,
     {"$set":
     jobs 
     })
