@@ -25,16 +25,23 @@ $(".table").off('click').on('click', '.add', function(){
     var position_data = parentEle.find(".position").val();
     var company_data = parentEle.find(".company").val();
     var description_data = parentEle.find(".description").val();
-    console.log(position_data);
-    console.log(company_data);
-    console.log(description_data);
+
 
     // Validate input data for row
     if (position_data === '' || company_data === '' || description_data === '') {
         alert("Please Fill Required Fields");
         return false;
     }
-
+    var newTableRow = cloneRows.find('.newTableRow').clone();
+    newTableRow.attr('name', currentCounter)
+    var place = newTableRow.find(".positionz").text(position_data);
+    console.log(place);
+    newTableRow.find(".companyz").text(company_data);
+    newTableRow.find(".descriptionz").text(description_data);
+    newTableRow.removeClass('newTableRow');
+    newTableRow.addClass('tablerow');
+    console.log(newTableRow);
+    newTableRow.appendTo(".table");
     // Send row data to backend to be saved
     var new_job_data = {'position':position_data, 'company':company_data, 'description':description_data};
     var baseURL = window.location.origin; 
@@ -75,6 +82,11 @@ $(".table").off('click').on('click', '.add', function(){
         }
     });
 });
+
+
+
+
+
 
 $(".delete").click(function(){
     var position_data = $(this).parent().find(".gposition").text();
@@ -133,7 +145,7 @@ $(".submitedit").click(function(){
         success: function(msg) {
             console.log(msg)   
             console.log('SUCCESS REACHED API!');
-            alert('Job Info Has Been Delete!');
+            alert('Job Info Has Been Edited!');
         }
 });
 });
@@ -150,5 +162,4 @@ $(".tablerow").off('click').on('click', '.highlight', function(){
         $(this).parent().parent().find(".gdescription").css({'background':'rgb(190, 185, 185)'});
     }
 });
-
 

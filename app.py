@@ -224,72 +224,6 @@ def weather_api():
 
     return render_template('dashboard.html', temperature=temperature, wind=wind,rain=rain,icon=icon,rain_img=rain_img,sun_img=sun_img,cloudy_img=cloudy_img,day1_img=day1_img,day2_img=day2_img,day3_img=day3_img,day4_img=day4_img,day5_img=day5_img,day6_img=day6_img,day7_img=day7_img)
 
-'''
-    if day7_icon == "rain":
-        day7_img = rain_img 
-    if day7_icon == "clear-day":
-        day7_img = sun_img
-    if day7_icon == "cloudy":
-        day7_img = cloudy_img
-    if day7_icon == "partly-cloudy-day":
-        day7_img = cloudy_img
-   
-    
-    if day6_icon == "rain":
-        day6_img = rain_img
-    if day6_icon == "clear-day":
-        day6_img = sun_img
-    if day6_icon == "cloudy":
-        day6_img = cloudy_img
-    if day6_icon == "partly-cloudy-day":
-        day6_img = cloudy_img
-
-    if day5_icon == "rain":
-        day5_img = rain_img
-    if day5_icon == "clear-day":
-        day5_img = sun_img
-    if day5_icon == "cloudy":
-        day5_img = cloudy_img
-    if day5_icon == "partly-cloudy-day":
-        day5_img = cloudy_img
-
-    if day4_icon == "rain":
-        day4_img = rain_img
-    if day4_icon == "clear-day":
-        day4_img = sun_img
-    if day4_icon == "cloudy":
-        day4_img = cloudy_img
-    if day4_icon == "partly-cloudy-day":
-        day4_img = cloudy_img
-
-    if day3_icon == "rain":
-        day3_img = rain_img
-    if day3_icon == "clear-day":
-        day3_img = sun_img
-    if day3_icon == "cloudy":
-        day3_img = cloudy_img
-    if day3_icon == "partly-cloudy-day":
-        day3_img = cloudy_img
-
-    if day2_icon == "rain":
-        day2_img = rain_img
-    if day2_icon == "clear-day":
-        day2_img = sun_img
-    if day2_icon == "cloudy":
-        day2_img = cloudy_img
-    if day2_icon == "partly-cloudy-day":
-        day2_img = cloudy_img
-
-    if day1_icon == "rain":
-        day1_img = rain_img
-    if day1_icon == "clear-day":
-        day1_img = sun_img
-    if day1_icon == "cloudy":
-        day1_img = cloudy_img
-    if day1_icon == "partly-cloudy-day":
-        day1_img = cloudy_img
-        '''
-
 
 @portfolio_app.route('/complex', methods=['GET'])
 def complexfeature():
@@ -355,7 +289,7 @@ def editJob():
 
         collection_remote_jobs = db.remote_jobs
         myquery = { "position": "position" }
-        newvalues = { "$set": { "position": "position" }}
+        newvalues = { set: { "position": "position"}}
         print(collection_remote_jobs)
 
         collection_remote_jobs.update_one(myquery, newvalues)
