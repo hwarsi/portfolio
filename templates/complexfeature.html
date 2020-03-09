@@ -13,9 +13,9 @@
                     <div class="rowitem">Description</div>
                     <div class="rowitem">Button</div>
                 </div>
-                {% set count = 1 %}
+                {% set count = 0 %}
                 {% for i in range(counter) %}
-                <div class="tablerow balls" name={{count}}>
+                <div class="tablerow balls" name={{[i]}}>
                     <div class="positionz colors rowitem"><div class="cellvalue gposition">{{(job[i]["position"])}}</div>
                     <button class="edit"><img src="{{ url_for('static', filename='img/pencil.png') }}" width="40px" height="40px"></button>
                 <button class=submitedit>Submit Edit</button></div>
