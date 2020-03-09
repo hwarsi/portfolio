@@ -278,25 +278,6 @@ def deleteJob():
         print(traceback.format_exc())
         return jsonify('Failed!')
 
-@portfolio_app.route('/originalJob', methods=['POST'])
-def oringinalJob():
-    try:
-        ajax_data = request.get_json()
-        newjobs = {}
-        newjobs.update(ajax_data)
-        print(newjobs)
-
-
-        db = connectToDB()
-
-        collection_remote_jobs = db.remote_jobs
-
-
-        return jsonify('Success it worked')
-    except Exception as e:
-        print(e)
-        print(traceback.format_exc())
-        return jsonify('Failed!')
 @portfolio_app.route('/editJob', methods=['POST'])
 def editJob():
     try:
@@ -312,9 +293,10 @@ def editJob():
         myquery = { "position": "position" }
         newvalues = { set: { "position": "position"}}
         print(collection_remote_jobs)
+        findorginaljob = db.remote_jobs.find_one({})
 
         collection_remote_jobs.update_one(
-    newjobs,
+    {"_id": findorginaljob.get("_id")},
     {"$set":
     jobs 
     })

@@ -116,25 +116,6 @@ $(".table").off('click').on('click', '.edit', function(){
     console.log(cellValue);
     currentCell.attr('contenteditable', 'true');
     alert("You can now start editing");
-    var position_original = $(this).parent().find(".gposition").text();
-    var company_original = $(this).parent().find(".gcompany").text();
-    var description_original = $(this).parent().find(".gdescription").text();
-    console.log(position_original)
-    var original_job_data = {'position':position_original};
-    var baseURL = window.location.origin; 
-    var Post_URL = baseURL + '/originalJob';
-    $.ajax({
-        method: 'POST',
-        url: Post_URL,
-        data: JSON.stringify(original_job_data),
-        contentType: "application/json",
-        dataType: 'json',
-        success: function(msg) {
-            console.log(msg)   
-            console.log('SUCCESS REACHED API!');
-            alert('Job Info Has Been Edited!');
-        }
-});
 });
 $(".submitedit").click(function(){
     console.log("penis")
@@ -144,7 +125,7 @@ $(".submitedit").click(function(){
     console.log(position_data);
     console.log(company_data);
     console.log(description_data);
-    var edit_job_data = {'position':position_data};
+    var edit_job_data = {'position':position_data, 'company':company_data, 'description':description_data};
     var baseURL = window.location.origin; 
     var Post_URL = baseURL + '/editJob';
     $.ajax({
