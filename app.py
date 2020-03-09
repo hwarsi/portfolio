@@ -285,7 +285,6 @@ def editJob():
         jobs = {}
         jobs.update(ajax_data)
         print(jobs)
-        print(newjobs)
 
         db = connectToDB()
 
@@ -294,6 +293,7 @@ def editJob():
         newvalues = { set: { "position": "position"}}
         print(collection_remote_jobs)
         findorginaljob = db.remote_jobs.find_one({})
+        print(findorginaljob)
 
         collection_remote_jobs.update_one(
     {"_id": findorginaljob.get("_id")},
