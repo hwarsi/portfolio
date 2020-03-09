@@ -118,14 +118,13 @@ $(".table").off('click').on('click', '.edit', function(){
     alert("You can now start editing");
 });
 $(".submitedit").click(function(){
-    console.log("penis")
-    var position_data = $(this).parent().find(".cellvalue").find(".gposition").text();
-    var company_data = $(this).parent().find(".cellvalue").find(".gcompany").text();
-    var description_data = $(this).parent().find(".cellvalue").find(".gdescription").text();
+    var position_data = $(this).parent().find(".gposition").text();
+    var company_data = $(this).parent().find(".gcompany").text();
+    var description_data = $(this).parent().find(".gdescription").text();
     console.log(position_data);
     console.log(company_data);
     console.log(description_data);
-    var edit_job_data = {'position':position_data,'company':company_data,'description':description_data};
+    var edit_job_data = {'position':position_data, 'company':company_data, 'description':description_data};
     console.log(edit_job_data);
     var baseURL = window.location.origin; 
     var Post_URL = baseURL + '/editJob';

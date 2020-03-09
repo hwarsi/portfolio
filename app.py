@@ -230,7 +230,9 @@ def complexfeature():
     db = connectToDB()
     get_jobs = db.remote_jobs
     job = get_jobs.find()
+    print(job)
     counter = db.remote_jobs.count()
+    print(counter)
     return render_template('complexfeature.html', job=job, counter=counter)
     
 '''for key in position:
@@ -284,19 +286,16 @@ def editJob():
         ajax_data = request.get_json()
         jobs = {}
         jobs.update(ajax_data)
-        print(jobs)
 
         db = connectToDB()
+       
 
         collection_remote_jobs = db.remote_jobs
-        myquery = { "position": "position" }
-        newvalues = { set: { "position": "position"}}
         print(collection_remote_jobs)
-        findorginaljob = db.remote_jobs.find_one({})
-        print(findorginaljob)
+        
 
         collection_remote_jobs.update_one(
-    {"_id": findorginaljob.get("_id")},
+    oldjobs,
     {"$set":
     jobs 
     })
