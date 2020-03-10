@@ -283,23 +283,15 @@ def deleteJob():
 @portfolio_app.route('/editJob', methods=['POST'])
 def editJob():
     try:
-        ajax_data = request.get_json()
-        jobs = {}
-        jobs.update(ajax_data)
-
         db = connectToDB()
-       
+        ajax_data = request.get_json()
+        oldjob = db.remote_jobs.findOne()
+        newjob = {}
+        newjob.update(ajax_data)
 
-        collection_remote_jobs = db.remote_jobs
-        print(collection_remote_jobs)
         
-
-        collection_remote_jobs.update_one(
-    oldjobs,
-    {"$set":
-    jobs 
-    })
-
+        db = connectToDB()
+    
         return jsonify('Success it worked')
     except Exception as e:
         print(e)
