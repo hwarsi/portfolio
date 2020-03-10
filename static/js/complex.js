@@ -118,9 +118,9 @@ $(".table").off('click').on('click', '.edit', function(){
     alert("You can now start editing");
 });
 $(".submitedit").click(function(){
-    var position_data = $(this).parent().find(".gposition").text();
-    var company_data = $(this).parent().find(".gcompany").text();
-    var description_data = $(this).parent().find(".gdescription").text();
+    var position_data = $(this).parent().find(".cellvalue").text();
+    var company_data = $(this).parent().find(".cellvalue").text();
+    var description_data = $(this).parent().find(".cellvalue").text();
     console.log(position_data);
     console.log(company_data);
     console.log(description_data);
