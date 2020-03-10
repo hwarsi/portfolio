@@ -281,9 +281,9 @@ def editJob():
     try:
         db = connectToDB()
         ajax_data = request.get_json()
-        oldjob = db.remote_jobs.find_one()
+        oldjob = db.remote_jobs.find_one({})
         ancientjob = {}
-        ancientjob.update(oldjob)
+        ancientjob.update()
         newjob = {}
         newjob.update(ajax_data)
         db = connectToDB()
