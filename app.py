@@ -285,12 +285,18 @@ def editJob():
     try:
         db = connectToDB()
         ajax_data = request.get_json()
-        oldjob = db.remote_jobs.findOne()
+        oldjob = db.remote_jobs.findOne(ajax_data)
+        ancientjob = {}
+        ancientjob.update(oldjob)
         newjob = {}
         newjob.update(ajax_data)
-
-        
         db = connectToDB()
+
+        db.remote_jobs.updateOne(ancientjob,
+    {"$set":
+        newjob
+    }
+)
     
         return jsonify('Success it worked')
     except Exception as e:
