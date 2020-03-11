@@ -115,16 +115,45 @@ $(".table").off('click').on('click', '.edit', function(){
     var cellValue = currentCell.text();
     console.log(cellValue);
     currentCell.attr('contenteditable', 'true');
+    $(this).parent().find(".submitedit").css({'display':'block'});
     alert("You can now start editing");
 });
 $(".submitedit").click(function(){
-    var position_data = $(this).parent().find(".cellvalue").text();
-    var company_data = $(this).parent().find(".cellvalue").text();
-    var description_data = $(this).parent().find(".cellvalue").text();
-    console.log(position_data);
-    console.log(company_data);
-    console.log(description_data);
-    var edit_job_data = {'position':position_data, 'company':company_data, 'description':description_data};
+    var currentCell = $(this).parent();
+    var tableRow = currentCell.parent();
+
+    var change_data = currentCell.find(".cellvalue").text();
+    var currentClass = currentCell.attr('class').split(' ');  //positionz colors row
+    var current_item = currentClass[0]; 
+
+    console.log(current_item);
+
+    if (current_item === 'positionz') {
+        var companyVal = tableRow.find(".companyz").find(".cellvalue").text();
+        var descriptionVal = tableRow.find(".descriptionz").find(".cellvalue").text();
+
+        var searchTerm = {'company': companyVal,'description': descriptionVal};
+        var change_item = {'position': change_data}
+
+    } else if (current_item === 'companyz') { 
+        var positionVal = tableRow.find(".positionz").find(".cellvalue").text();
+        var descriptionVal = tableRow.find(".descriptionz").find(".cellvalue").text();
+
+        var searchTerm = {'position': positionVal,'description': descriptionVal};
+        var change_item = {'company': change_data}
+
+    } else if (current_item === 'descriptionz') {
+        var companyVal = tableRow.find(".companyz").find(".cellvalue").text();
+        var positionVal = tableRow.find(".positionz").find(".cellvalue").text();
+
+        var searchTerm = {'position': positionVal,'company': companyVal};
+        var change_item = {'description': change_data}
+    }
+   
+    console.log(change_item);
+    console.log(searchTerm);
+    var edit_job_data = {'change_item':change_item, 'searchTerm':searchTerm};
+
     console.log(edit_job_data);
     var baseURL = window.location.origin; 
     var Post_URL = baseURL + '/editJob';
@@ -136,10 +165,18 @@ $(".submitedit").click(function(){
         dataType: 'json',
         success: function(msg) {
             console.log(msg)   
-            console.log('SUCCESS REACHED API!');
-            alert('Job Info Has Been Edited!');
+            console.log('REACHED API!');
+
+            if (msg === 'Failed') {
+                alert('Job Info couldnt be updated!');
+                currentCell.find(".submitedit").css({'display':'none'});
+                return false;
+            } else {
+                alert('Job Info Has Been Edited!');
+                currentCell.find(".submitedit").css({'display':'none'});
+            }
         }
-});
+    });
 });
 
 $(".tablerow").off('click').on('click', '.highlight', function(){

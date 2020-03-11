@@ -134,11 +134,13 @@ def news():
 def weather_api():
     response = requests.get('https://api.darksky.net/forecast/83945a80a84576da8cbe39329a67d40c/34.8526,-82.3940')
     json_object = response.json()
+    
+    old_code = """
     temperatures = []
     winds = []
     rains = []
     icons = []
-    for i in range(0,7):
+    for i in range(0,len(json_object)-1):
         weekly_temperature = json_object['daily']['data'][i]['apparentTemperatureHigh']
         weekly_wind = json_object['daily']['data'][i]['windSpeed']
         weekly_rain = 100 * (json_object['daily']['data'][i]['precipProbability'])
@@ -221,8 +223,12 @@ def weather_api():
         day1_img = cloudy_img
     if icon['icons'][0] == "partly-cloudy-day":
         day1_img = cloudy_img
+     """
+     
+    final_data = json_object['daily']['data']
+    print(final_data)
 
-    return render_template('dashboard.html', temperature=temperature, wind=wind,rain=rain,icon=icon,rain_img=rain_img,sun_img=sun_img,cloudy_img=cloudy_img,day1_img=day1_img,day2_img=day2_img,day3_img=day3_img,day4_img=day4_img,day5_img=day5_img,day6_img=day6_img,day7_img=day7_img)
+    return render_template('dashboard.html', rain_img=rain_img,sun_img=sun_img,cloudy_img=cloudy_img, json_object=final_data)
 
 
 @portfolio_app.route('/complex', methods=['GET'])
@@ -281,16 +287,14 @@ def editJob():
     try:
         db = connectToDB()
         ajax_data = request.get_json()
-        position = {'position': ajax_data["position"]}
-        company = {'company': ajax_data["company"]}
-        description = {'description': ajax_data["description"]}
+        change_item = ajax_data['change_item']      # {'description': 'This is a dumb job'}
+        searchTerm = ajax_data['searchTerm']        # {'position': 'Software Engineer','company': 'Bob Dik Yard'};
 
+        print(searchTerm)
+        print(change_item)
 
-        print(position)
-        newvalues = {"$set": ajax_data}
-        db.remote_jobs.update_one(position, newvalues)
-        db.remote_jobs.update_one(company, newvalues)
-        db.remote_jobs.update_one(description, newvalues)
+        newvalues = {"$set": change_item}
+        db.remote_jobs.update_one(searchTerm, newvalues)
 
         return jsonify('Success it worked')
     except Exception as e:

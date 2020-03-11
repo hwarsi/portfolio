@@ -170,3 +170,7 @@ input:checked + .slider:before
 
 .switch_new_row input {display: none}
 
+.submitedit {
+    display: none;
+}
+
