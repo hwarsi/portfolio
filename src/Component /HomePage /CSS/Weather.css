@@ -1,0 +1,13 @@
+#background {
+  background-color: rgb(159, 194, 159);
+  font-family: roboto;
+  border-radius: 18px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  width: 1000px;
+  height: 1100px;
+}
+
+#height {
+  height: 122200px;
+}

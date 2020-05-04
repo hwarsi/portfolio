@@ -1,0 +1,100 @@
+.wrapper {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.wrapeverything {
+  font-family: roboto;
+  border-radius: 18px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  width: 1000px;
+  height: 500px;
+}
+
+.wrapper h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+
+.wrapper h2 {
+  text-align: left;
+}
+
+.line {
+  height: 25px;
+  min-width: 800px;
+  margin: 0 auto 10px;
+  line-height: 25px;
+  font-size: 14px;
+  padding: 0 0 0 10px;
+  color: #fff;
+  padding: 0 0 0 10px;
+  position: relative;
+}
+
+.line:before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 25px;
+  top: 0;
+  z-index: -2;
+  background-color: grey;
+}
+
+.line:after {
+  content: "";
+  background: rgb(255, 7, 110);
+  height: 25px;
+  transition: 0.8s;
+  display: block;
+  width: 100%;
+  animation: animate 1 4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.line1:after {
+  max-width: 90%;
+}
+.line2:after {
+  max-width: 85%;
+}
+.line3:after {
+  max-width: 95%;
+}
+.line4:after {
+  max-width: 80%;
+}
+.line5:after {
+  max-width: 75%;
+}
+
+@keyframes animate {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.maincolumns {
+  padding-bottom: 30px;
+}
+
+#photo {
+  display: flex;
+  width: 100px;
+  height: 90px;
+  flex-direction: column;
+  margin-right: 40px;
+  flex-direction: wrap;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}

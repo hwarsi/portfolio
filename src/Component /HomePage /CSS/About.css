@@ -1,0 +1,102 @@
+.icons {
+  width: 120px;
+  height: 120px;
+  background: #8a868e;
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-right: 130px;
+  margin-left: 80px;
+  justify-content: space-evenly;
+}
+.profile {
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+}
+.Rocket {
+  margin-top: 30px;
+  margin-left: 25px;
+}
+
+.Lightbulb {
+  margin-top: 30px;
+  margin-left: 38px;
+}
+
+.Bath {
+  margin-top: 30px;
+  margin-left: 33px;
+}
+
+.Laptop {
+  margin-top: 30px;
+  margin-left: 23px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.textTitle {
+  display: flex;
+  flex-direction: row;
+}
+
+.responsive {
+  margin-top: 10px;
+  margin-right: 100px;
+  margin-left: 105px;
+}
+
+.intuitive {
+  margin-top: 10px;
+  margin-right: 100px;
+  margin-left: 165px;
+}
+
+.dynamic {
+  margin-top: 10px;
+  margin-right: 100px;
+  margin-left: 190px;
+}
+
+.clean {
+  margin-top: 10px;
+  margin-right: 60px;
+  margin-left: 185px;
+}
+
+.descriptionresponsive {
+  width: 180px;
+  word-break: break-all;
+  margin-right: 50px;
+  margin-left: 60px;
+}
+
+.descriptionintuitive {
+  width: 180px;
+  word-break: break-all;
+  margin-left: 90px;
+}
+
+.descriptiondynamic {
+  width: 180px;
+  word-break: break-all;
+  margin-left: 150px;
+  margin-right: 250px;
+}
+
+.descriptionclean {
+  width: 180px;
+  word-break: break-all;
+}
+
+.rowflex {
+  display: flex;
+  flex-direction: row;
+}
+.profiletext {
+  width: 180px;
+  word-break: break-all;
+}

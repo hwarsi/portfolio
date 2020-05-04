@@ -1,0 +1,24 @@
+.length {
+  width: 400px;
+}
+
+.lengths {
+  width: 400px;
+  height: 1px;
+}
+
+.Title {
+  margin-left: 10px;
+}
+
+.boxs {
+  color: rgb(255, 7, 110);
+  margin-top: 10px;
+  font-family: roboto;
+  border-radius: 18px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  height: 375px;
+  width: 700px;
+  margin-left: 150px;
+}
