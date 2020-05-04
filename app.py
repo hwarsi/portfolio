@@ -132,7 +132,7 @@ def news():
 
 @portfolio_app.route('/dashboard', methods=['GET'])
 def weather_api():
-    response = requests.get('https://api.darksky.net/forecast/83945a80a84576da8cbe39329a67d40c/34.8526,-82.3940')
+    response = requests.get(')
     json_object = response.json()
     
     old_code = """
@@ -243,7 +243,6 @@ def complexfeature():
         print(key)
     for key in company:
         print(key)'''
-
 @portfolio_app.route('/addJob', methods=['POST'])
 def addJob():
     try:
