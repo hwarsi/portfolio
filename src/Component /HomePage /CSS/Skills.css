@@ -1,18 +1,113 @@
-#photo {
+#html {
   display: flex;
   width: 100px;
   height: 90px;
-  flex-direction: column;
+  flex-direction: row;
   margin-right: 40px;
   flex-direction: wrap;
   margin-top: 50px;
   justify-content: space-evenly;
 }
 
-.box {
+#css {
   display: flex;
-  font-family: roboto;
-  border-radius: 18px;
-  background: white;
-  height: 190px;
+  width: 100px;
+  height: 90px;
+  flex-direction: row;
+  margin-right: 40px;
+  flex-direction: wrap;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+
+#jquery {
+  display: flex;
+  width: 100px;
+  height: 90px;
+  flex-direction: row;
+  margin-right: 40px;
+  flex-direction: wrap;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+
+#javascript {
+  display: flex;
+  width: 100px;
+  height: 90px;
+  flex-direction: row;
+  margin-right: 40px;
+  flex-direction: wrap;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+
+#react {
+  display: flex;
+  width: 100px;
+  height: 90px;
+  flex-direction: row;
+  margin-right: 40px;
+  flex-direction: wrap;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+
+#python {
+  display: flex;
+  width: 100px;
+  height: 90px;
+  flex-direction: row;
+  margin-right: 40px;
+  flex-direction: wrap;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+
+#flask {
+  display: flex;
+  width: 100px;
+  height: 90px;
+  flex-direction: row;
+  margin-right: 40px;
+  flex-direction: wrap;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+
+#mongodb {
+  display: flex;
+  width: 100px;
+  height: 90px;
+  flex-direction: row;
+  margin-right: 40px;
+  flex-direction: wrap;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+
+#sql {
+  display: flex;
+  width: 100px;
+  height: 90px;
+  flex-direction: row;
+  margin-right: 40px;
+  flex-direction: wrap;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+
+#github {
+  display: flex;
+  width: 100px;
+  height: 90px;
+  flex-direction: row;
+  margin-right: 40px;
+  flex-direction: wrap;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+
+.frontend {
+  display: flex;
 }
