@@ -17,7 +17,6 @@ ReactDOM.render(
     <Resume />
     <SkillChart />
     <Skills />
-    <Education />
     <Weather />
     <ContactForm />
   </div>,

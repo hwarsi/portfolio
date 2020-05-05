@@ -1,11 +1,25 @@
 .title {
   color: black;
 }
+.backgroundResume {
+  background-color: darkslategrey;
+  width: 100vw;
+  height: 1800px;
+}
+.Resume {
+  padding-top: 60px;
+  margin-left: 501px;
+  font-size: -webkit-xxx-large;
+  margin-bottom: 130px;
+  margin-top: 100px;
+  color: rgb(255, 7, 110);
+}
 
 #card {
   display: grid;
   grid-template-columns: 450px;
-  grid-template-rows: 210px 310px 80px;
+  grid-template-rows: 210px 395px 80px;
+
   grid-template-areas: "image" "text" "stats";
 
   font-family: roboto;
@@ -13,18 +27,85 @@
   background: white;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
   text-align: center;
+  width: 450px;
+
+  margin-left: 180px;
 
   transition: 0.5s ease;
   cursor: pointer;
-  margin-bottom: 70px;
+}
+
+#card1 {
+  display: grid;
+  grid-template-columns: 450px;
+  grid-template-rows: 210px 395px 80px;
+
+  grid-template-areas: "image" "text" "stats";
+
+  margin-left: 746px;
+  margin-top: -684px;
+
+  font-family: roboto;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  width: 450px;
+
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+#card2 {
+  display: grid;
+  grid-template-columns: 450px;
+  grid-template-rows: 210px 395px 80px;
+
+  grid-template-areas: "image" "text" "stats";
+
+  margin-left: 180px;
+
+  font-family: roboto;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  width: 450px;
+
+  transition: 0.5s ease;
+  cursor: pointer;
+
+  margin-top: 55px;
+}
+
+#card3 {
+  display: grid;
+  grid-template-columns: 450px;
+  grid-template-rows: 210px 395px 80px;
+
+  grid-template-areas: "image" "text" "stats";
+
+  font-family: roboto;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  width: 450px;
+
+  margin-left: 746px;
+  margin-top: -684px;
+
+  transition: 0.5s ease;
+  cursor: pointer;
 }
 
 #card-image {
   grid-area: image;
-  background: url("../../../Photos/Videos/marketing.jpeg");
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-size: cover;
+  width: 450px;
+  height: 229px;
 }
 
 #card-text {
@@ -51,4 +132,25 @@
 #card:hover {
   transform: scale(1.2);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+#card1:hover {
+  transform: scale(1.2);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+#card2:hover {
+  transform: scale(1.2);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+#card3:hover {
+  transform: scale(1.2);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.Company {
+  font-size: larger;
+  font-weight: bolder;
+  color: rgb(255, 7, 110);
 }

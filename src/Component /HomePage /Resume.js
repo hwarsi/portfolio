@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import "./CSS/Overall.css";
+import marketing from "../../Photos/Videos/marketing.jpeg";
+import codeing from "../../Photos/Videos/coding.jpeg";
+import internship from "../../Photos/Videos/internship.jpeg";
+import engineering from "../../Photos/Videos/engineering.jpeg";
+
 class Resume extends Component {
   constructor(props) {
     super(props);
@@ -7,9 +12,11 @@ class Resume extends Component {
     this.state = {
       Jobs: [
         {
+          card: "card",
           Job: "Marketing Coordinator",
           date: "Febuary 2020 - Present",
           Company: "Southern Management Corporation",
+          image: marketing,
           description: [
             "	Coordinates activities to promote develop, execute and launch marketing efforts.",
             " Collaborates with branches and leadership to develop plans to drive business and meet company goals.",
@@ -18,9 +25,11 @@ class Resume extends Component {
           ],
         },
         {
+          card: "card1",
           Job: "Software Engineer (Remote)",
           date: "August 2018 - January 2020",
           Company: "My Value Media",
+          image: codeing,
           description: [
             "Utilized React, CSS, Flexbox and APIS to create landing pages for clients. ",
             "Developed back end services using Python (Flask), MongoDB for our databases.",
@@ -30,9 +39,11 @@ class Resume extends Component {
           ],
         },
         {
-          Job: "Digital Marketing Intern",
+          card: "card2",
+          Job: "Software Engineer Intern",
           date: "May 2019 - August 2019",
           Company: "Redhype",
+          image: internship,
           description: [
             "Deployed Applications on Google Cloud.",
             "Used RESTful services for Single-Sign-On authentication.",
@@ -40,9 +51,11 @@ class Resume extends Component {
           ],
         },
         {
+          card: "card3",
           Job: "Purchasing Engineer",
           date: "January 2019 - May 2019",
           Company: "Bosch Rexroth",
+          image: engineering,
           description: [
             "Worked with ten external parts suppliers on parts quotations, return parts and specification updates",
             "Responsible for inspecting out of spec parts for quality issues",
@@ -55,10 +68,12 @@ class Resume extends Component {
 
   render() {
     return (
-      <div>
+      <div className="backgroundResume">
+        <h1 className="Resume">Work Experience</h1>
         {this.state.Jobs.map((item) => (
-          <div id="card">
-            <div id="card-image"></div>
+          <div id={item.card}>
+            <img src={item.image} id="card-image"></img>
+            <div className="Company">{item.Company}</div>
             <div id="card-text">
               <span id="date">{item.date}</span>
               <h2>{item.Job}</h2>

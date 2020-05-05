@@ -59,6 +59,7 @@
   margin-top: 10px;
   margin-right: 100px;
   margin-left: 190px;
+  margin-left: 130px;
 }
 
 .clean {
@@ -72,12 +73,14 @@
   word-break: break-all;
   margin-right: 50px;
   margin-left: 60px;
+  margin-top: 10px;
 }
 
 .descriptionintuitive {
   width: 180px;
   word-break: break-all;
   margin-left: 90px;
+  margin-top: 10px;
 }
 
 .descriptiondynamic {
@@ -85,11 +88,14 @@
   word-break: break-all;
   margin-left: 150px;
   margin-right: 250px;
+  margin-top: 10px;
 }
 
 .descriptionclean {
   width: 180px;
   word-break: break-all;
+  margin-left: -85px;
+  margin-top: 10px;
 }
 
 .rowflex {

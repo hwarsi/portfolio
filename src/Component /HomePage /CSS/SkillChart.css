@@ -1,6 +1,7 @@
-.wrapper {
-  width: 800px;
+.wrapperbox {
+  width: 8020px;
   margin: 0 auto;
+  background-color: red;
 }
 
 .wrapeverything {
@@ -8,8 +9,10 @@
   border-radius: 18px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
   text-align: center;
-  width: 1000px;
+  width: 1019px;
   height: 500px;
+  margin-left: 179px;
+  margin-top: 100px;
 }
 
 .wrapper h1 {
