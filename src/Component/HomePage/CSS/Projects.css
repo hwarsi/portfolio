@@ -1,0 +1,70 @@
+.backgroundProjects {
+  width: 100vw;
+  height: 900px;
+  background-color: rgb(75, 87, 109);
+}
+
+.backgroundProjects {
+}
+
+.ProjectTitle {
+  margin-left: 700px;
+  font-size: 50px;
+  color: rgb(255, 7, 110);
+}
+
+.DevSpotTitle {
+}
+
+.howDevSpot {
+  font-size: 20px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+.Portfolio {
+  margin-left: 650px;
+}
+
+.DevSpot {
+}
+
+.DevSpotDescription {
+  width: 400px;
+  word-break: normal;
+}
+
+.portfolioSection {
+  margin-left: 990px;
+  margin-top: -270px;
+}
+
+.PortfolioDesription {
+}
+
+.DevSpotImage {
+  width: 475px;
+  height: 350px;
+  margin-left: 110px;
+}
+.differentTitles {
+  display: flex;
+  margin-left: 300px;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.DevGroupDescription {
+  margin-left: 190px;
+}
+
+.ProfileHow {
+  font-size: 20px;
+}
+
+.portfolioImage {
+  margin-left: 930px;
+  margin-top: -350px;
+  width: 475px;
+  height: 350px;
+}

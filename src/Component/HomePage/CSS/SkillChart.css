@@ -1,18 +1,18 @@
-.wrapperbox {
-  width: 8020px;
-  margin: 0 auto;
-  background-color: red;
-}
-
-.wrapeverything {
+.wrapperBox {
   font-family: roboto;
-  border-radius: 18px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
   text-align: center;
   width: 1019px;
   height: 500px;
-  margin-left: 179px;
-  margin-top: 100px;
+  background-color: white;
+  padding-left: 30px;
+  padding-right: 60px;
+}
+
+.wrapeverything {
+  background-color: rgb(165, 165, 158);
+  padding-left: 229px;
+  padding-top: 100px;
+  padding-bottom: 70px;
 }
 
 .wrapper h1 {
@@ -44,7 +44,6 @@
   left: 0;
   height: 25px;
   top: 0;
-  z-index: -2;
   background-color: grey;
 }
 
@@ -59,7 +58,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
 }
 
 .line1:after {
@@ -100,4 +98,11 @@
   flex-direction: wrap;
   margin-top: 50px;
   justify-content: space-evenly;
+}
+
+.skillChartTitle {
+  padding-left: 430px;
+  margin-right: 10px;
+  font-size: 300%;
+  color: rgb(255, 7, 110);
 }

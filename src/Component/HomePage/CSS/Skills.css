@@ -1,7 +1,44 @@
+.skillsBackground {
+  padding-top: 30px;
+  background-color: rgb(24, 70, 70);
+  width: 100vw;
+  height: 1000px;
+}
+
+.frontendtool {
+  display: flex;
+  margin-left: 300px;
+  font-size: 400%;
+  font-weight: 900;
+  padding-left: 280px;
+  color: rgb(255, 7, 110);
+}
+
+.backendtool {
+  display: flex;
+  margin-left: 300px;
+  font-size: 400%;
+  font-weight: 900;
+  margin-top: 60px;
+  padding-left: 280px;
+  color: rgb(255, 7, 110);
+}
+
+.otherToolTitle {
+  display: flex;
+  margin-left: 300px;
+  font-size: 400%;
+  font-weight: 900;
+  margin-top: -30px;
+  padding-left: 320px;
+
+  color: rgb(255, 7, 110);
+}
+
 #html {
   display: flex;
-  width: 100px;
-  height: 90px;
+  width: 180px;
+  height: 170px;
   flex-direction: row;
   margin-right: 40px;
   flex-direction: wrap;
@@ -11,8 +48,8 @@
 
 #css {
   display: flex;
-  width: 70px;
-  height: 90px;
+  width: 129px;
+  height: 168px;
   flex-direction: row;
   margin-right: 40px;
   flex-direction: wrap;
@@ -22,92 +59,97 @@
 
 #jquery {
   display: flex;
-  width: 100px;
+  width: 290px;
   height: 90px;
   flex-direction: row;
-  margin-right: 40px;
-  flex-direction: wrap;
-  margin-top: 50px;
   justify-content: space-evenly;
+  margin-top: 120px;
 }
 
 #javascript {
   display: flex;
-  width: 100px;
-  height: 90px;
+  width: 245px;
+  height: 165px;
   flex-direction: row;
-  margin-right: 40px;
-  flex-direction: wrap;
-  margin-top: 50px;
+  margin-top: 65px;
   justify-content: space-evenly;
 }
 
 #react {
   display: flex;
-  width: 100px;
-  height: 90px;
+  width: 210px;
+  height: 170px;
   flex-direction: row;
-  margin-right: 40px;
-  flex-direction: wrap;
-  margin-top: 50px;
+  margin-left: -50px;
+  margin-top: 60px;
   justify-content: space-evenly;
 }
 
 #python {
   display: flex;
-  width: 100px;
-  height: 90px;
+  width: 150px;
+  height: 130px;
   flex-direction: row;
   margin-right: 40px;
-  flex-direction: wrap;
   margin-top: 50px;
   justify-content: space-evenly;
 }
 
 #flask {
   display: flex;
-  width: 100px;
-  height: 90px;
+  width: 310px;
+  height: 230px;
   flex-direction: row;
   margin-right: 40px;
-  flex-direction: wrap;
-  margin-top: 50px;
+  margin-top: 10px;
   justify-content: space-evenly;
 }
 
 #mongodb {
   display: flex;
-  width: 100px;
+  width: 240px;
   height: 90px;
   flex-direction: row;
   margin-right: 40px;
-  flex-direction: wrap;
-  margin-top: 50px;
+  margin-top: 60px;
   justify-content: space-evenly;
 }
 
 #sql {
   display: flex;
-  width: 100px;
-  height: 90px;
+  width: 140px;
+  height: 120px;
   flex-direction: row;
   margin-right: 40px;
-  flex-direction: wrap;
   margin-top: 50px;
   justify-content: space-evenly;
 }
 
 #github {
   display: flex;
-  width: 100px;
-  height: 90px;
+  width: 300px;
+  height: 130px;
   flex-direction: row;
   margin-right: 40px;
-  flex-direction: wrap;
   margin-top: 50px;
   justify-content: space-evenly;
 }
 
 .frontend {
   display: flex;
+  margin-left: 230px;
+  margin-top: -50px;
+}
+
+.backend {
+  display: flex;
+  margin-left: 260px;
+  margin-top: -50px;
+}
+
+.otherTools {
+  display: flex;
+  margin-left: 610px;
+  margin-bottom: 500px;
+  margin-top: -50px;
 }

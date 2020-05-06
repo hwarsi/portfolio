@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Table, Tag } from "antd";
 import "./CSS/Weather.css";
+import Item from "antd/lib/list/Item";
 
 const { Column, ColumnGroup } = Table;
 
@@ -12,6 +13,7 @@ class Weather extends Component {
       weatherInfo: [],
       week: [],
       farenheight: <p>&#8457;</p>,
+      key: [],
     };
   }
 
@@ -128,14 +130,15 @@ class Weather extends Component {
             weatherData["daily"][i]["weather"][0]["description"];
           let mainWeather = weatherData["daily"][i]["weather"][0]["main"];
           let currentDay = week[i];
-          let key = i;
+          let key = ["key1", "key2", "key3", "key4", "key5", "key6", "key7"];
+          let currentKey = key[i];
 
           if (mainWeather === "Clear") {
             let icon = (
               <img src="http://openweathermap.org/img/wn/01d@2x.png"></img>
             );
             weather.push({
-              key: key,
+              key: currentKey,
               day: currentDay,
               temperature: currentTemperature,
               weather: currentWeather,
@@ -149,7 +152,7 @@ class Weather extends Component {
               <img src="http://openweathermap.org/img/wn/02d@2x.png"></img>
             );
             weather.push({
-              key: key,
+              key: currentKey,
               day: currentDay,
               temperature: currentTemperature,
               weather: currentWeather,
@@ -162,7 +165,7 @@ class Weather extends Component {
               <img src="http://openweathermap.org/img/wn/09d@2x.png"></img>
             );
             weather.push({
-              key: key,
+              key: currentKey,
               day: currentDay,
               temperature: currentTemperature,
               weather: currentWeather,
@@ -176,7 +179,7 @@ class Weather extends Component {
               <img src="http://openweathermap.org/img/wn/13d@2x.png"></img>
             );
             weather.push({
-              key: key,
+              key: currentKey,
               day: currentDay,
               temperature: currentTemperature,
               weather: currentWeather,
@@ -189,7 +192,7 @@ class Weather extends Component {
               <img src="http://openweathermap.org/img/wn/50d@2x.png"></img>
             );
             weather.push({
-              key: key,
+              key: currentKey,
               day: currentDay,
               temperature: currentTemperature,
               weather: currentWeather,
@@ -209,20 +212,20 @@ class Weather extends Component {
 
   render() {
     return (
-      <Table dataSource={this.state.weatherInfo} id="background">
-        <ColumnGroup title="Weather Greenville, SC" id="height">
-          <Column title="Day" dataIndex="day" id="height" />
-
-          <Column title="" dataIndex="icon" id="height" />
-          <Column title="Weather Condition" dataIndex="weather" id="height" />
-
-          <Column
-            title={<d>Temperature in &#8457;</d>}
-            dataIndex={"temperature"}
-            id="height"
-          />
-        </ColumnGroup>
-      </Table>
+      <div className="weatherBackground">
+        <h1 className="weatherTitle">Weather</h1>
+        <h1 className="weatherLocatation">Greenville, SC</h1>
+        <div className="widgetBackground">
+          {this.state.weatherInfo.map((item) => (
+            <div className={item.key} id="key">
+              <div className="dayWeather">{item.day}</div>
+              <div className="iconWeather">{item.icon}</div>
+              <div className="temperature">{item.temperature} &#8457;</div>
+              <div className="weatherDescription">{item.weather}</div>
+            </div>
+          ))}
+        </div>
+      </div>
     );
   }
 }

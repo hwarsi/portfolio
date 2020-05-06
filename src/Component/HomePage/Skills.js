@@ -18,54 +18,44 @@ class Skills extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Tools I use</h1>
-
+      <div className="skillsBackground">
         <div className="boxSkills">
+          <h1 className="frontendtool">Frontend Tools</h1>
           <div className="frontend">
             <div className="skill">
               <img id="html" src={html} />
-              <div>HTML</div>
             </div>
             <div className="skill">
               <img id="css" src={css} />
-              <div>CSS</div>
             </div>
             <div className="skill">
               <img id="jquery" src={jquery} />
-              <div>Jquery</div>
             </div>
             <div className="skill">
               <img id="javascript" src={javascript} />
-              <div>Javascript</div>
             </div>
             <div className="skill">
               <img id="react" src={Reacts} />
-              <div>React</div>
             </div>
           </div>
-
+          <h1 className="backendtool">Backend Tools</h1>
           <div className="backend">
             <div className="skill">
               <img id="python" src={python} />
-              <div>Python</div>
             </div>
             <div className="skill">
               <img id="flask" src={flask} />
-              <div>Flask</div>
             </div>
             <div className="skill">
               <img id="mongodb" src={mongodb} />
-              <div>Mongodb</div>
             </div>
             <div className="skill">
               <img id="sql" src={SQL} />
-              <div>PostgreSQL</div>
             </div>
-            <div className="skill">
-              <img id="github" src={Github} />
-              <div>Github</div>
-            </div>
+          </div>
+          <h1 className="otherToolTitle">Other Tools</h1>
+          <div className="otherTools">
+            <img id="github" src={Github} />
           </div>
         </div>
       </div>

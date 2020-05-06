@@ -14,14 +14,16 @@ class About extends Component {
 
   render() {
     return (
-      <div>
+      <div className="aboutBackground">
         <div>
-          <h1>Who is he?</h1>
-          <img src={haris} className="profile"></img>
+          <h1 className="aboutMe">About Me</h1>
           <p className="profiletext">
-            I am a full stack Software Engineer. have a strong drive to learn
-            and constantly challenge my skill-sets. Every day for me is a new
-            opportunity for growth, and development.{" "}
+            Its a pleasure meeting you. I am a full stack Software Engineer with
+            a strong drive to learn and constantly challenge my skill-sets.
+            Every day for me is a new opportunity for growth, and development. I
+            love taking complex ideas and coming up with simplified and
+            beautiful solutions. When I am not coding, you can probably find me
+            working out, reading, or walking my dog.{" "}
           </p>
         </div>
         <div className="container">

@@ -1,14 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Resume from "./Component /HomePage /Resume";
-import Skills from "./Component /HomePage /Skills";
-import SkillChart from "./Component /HomePage /SkillChart";
-import Weather from "./Component /HomePage /Weather";
-import ContactForm from "./Component /HomePage /ContactForm";
-import Education from "./Component /HomePage /Education";
-import Introduction from "./Component /HomePage /Introduction";
-import About from "./Component /HomePage /About";
+import Resume from "./Component/HomePage/Resume";
+import Skills from "./Component/HomePage/Skills";
+import SkillChart from "./Component/HomePage/SkillChart";
+import Weather from "./Component/HomePage/Weather";
+import ContactForm from "./Component/HomePage/ContactForm";
+import Education from "./Component/HomePage/Education";
+import Introduction from "./Component/HomePage/Introduction";
+import About from "./Component/HomePage/About";
+import Projects from "./Component/HomePage/Projects";
 
 ReactDOM.render(
   <div>
@@ -17,6 +18,8 @@ ReactDOM.render(
     <Resume />
     <SkillChart />
     <Skills />
+    <Projects />
+    <Education />
     <Weather />
     <ContactForm />
   </div>,

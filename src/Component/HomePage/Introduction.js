@@ -19,7 +19,6 @@ class Introduction extends Component {
         <div className="content">
           <h1>Nice to meet you!</h1>
           <p>My name is Haris. I'm a full stack developer.</p>
-          <Button type="primary">Click to learn more!</Button>
         </div>
       </div>
     );

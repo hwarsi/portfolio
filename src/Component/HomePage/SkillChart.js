@@ -19,19 +19,20 @@ class SkillChart extends Component {
   render() {
     return (
       <div className="wrapeverything">
+        <h1 className="skillChartTitle">Tools I Use</h1>
+
         <div className="wrapperBox">
           <div className="wrapper">
-            <h1>Skill Chart</h1>
             <h2>HTML / CSS</h2>
-            <div className="line line1">90%</div>
+            <div style={{ content: "90%" }} className="line line1"></div>
             <h2>JAVASCRIPT</h2>
-            <div className="line line2">85%</div>
+            <div style={{ content: "85%" }} className="line line2"></div>
             <h2>REACT</h2>
-            <div className="line line3">95%</div>
+            <div style={{ content: "95%" }} className="line line3"></div>
             <h2>PYTHON</h2>
-            <div className="line line4">80%</div>
+            <div style={{ content: "80%" }} className="line line4"></div>
             <h2>PostgreSQL</h2>
-            <div className="line line5">75%</div>
+            <div style={{ content: "75%" }} className="line line5"></div>
           </div>
         </div>
       </div>

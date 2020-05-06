@@ -1,13 +1,85 @@
-#background {
-  background-color: rgb(159, 194, 159);
-  font-family: roboto;
-  border-radius: 18px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-  text-align: center;
-  width: 1000px;
-  height: 1100px;
+.weatherBackground {
+  background-color: rgb(7, 61, 61);
+  width: 100vw;
+  height: 500px;
+  color: black;
 }
 
-#height {
-  height: 122200px;
+.weatherFormat {
+}
+
+.dayWeather {
+  font-size: 25px;
+}
+
+.iconWeather {
+}
+
+.temperature {
+  font-size: 40px;
+  color: white;
+}
+
+.weatherDescription {
+}
+
+.key1 .key2 .key3 {
+  display: flex;
+  flex-direction: row;
+}
+
+.key1 {
+  margin-left: 70px;
+}
+
+.key2 {
+  margin-left: 220px;
+  margin-top: -223px;
+}
+
+.key3 {
+  margin-left: 348px;
+  margin-top: -223px;
+}
+
+.key4 {
+  margin-left: 470px;
+  margin-top: -223px;
+}
+
+.key5 {
+  margin-left: 590px;
+  margin-top: -222px;
+}
+
+.key6 {
+  margin-left: 725px;
+  margin-top: -222px;
+}
+
+.key7 {
+  margin-left: 840px;
+  margin-top: -222px;
+}
+
+.weatherLocatation {
+  margin-left: 680px;
+  margin-top: -15px;
+  color: rgb(255, 7, 110);
+  margin-bottom: 30px;
+}
+
+.weatherTitle {
+  margin-left: 690px;
+  font-size: 40px;
+  color: rgb(255, 7, 110);
+}
+
+.widgetBackground {
+  border-radius: 18px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  margin-left: 220px;
+  width: 1050px;
+  height: 300px;
+  background-image: url("../../../Photos/Videos/backgroundweather.jpeg");
 }
