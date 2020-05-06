@@ -15,9 +15,9 @@ class About extends Component {
   render() {
     return (
       <div className="aboutBackground">
-        <div>
+        <div className="aboutMeBox">
           <h1 className="aboutMe">About Me</h1>
-          <p className="profiletext">
+          <p className="aboutText">
             Its a pleasure meeting you. I am a full stack Software Engineer with
             a strong drive to learn and constantly challenge my skill-sets.
             Every day for me is a new opportunity for growth, and development. I
@@ -26,53 +26,40 @@ class About extends Component {
             working out, reading, or walking my dog.{" "}
           </p>
         </div>
-        <div className="container">
-          <div className="icons">
-            <FontAwesomeIcon icon={faLaptop} size="4x" className="Laptop" />
+        <div className="attributeContainer">
+
+          <div className="myAttributes">
+            <div className="icons">
+              <FontAwesomeIcon icon={faLaptop} size="4x" className="Laptop" />
+            </div>
+            <p className="tagline">Responsive</p>
+            <p className="description"> My layouts will work on any device, big or small.</p>
+          </div>  
+
+          <div className="myAttributes">
+            <div className="icons">
+              <FontAwesomeIcon icon={faLightbulb} size="4x" className="Lightbulb"/>
+            </div>
+            <p className="tagline">Intuitive</p>
+            <p className="description">Strong preference for easy to use, intuitive UX/UI. Websites don't have to be static, I love making pages come to life.</p>
           </div>
-          <div className="icons">
-            <FontAwesomeIcon
-              icon={faLightbulb}
-              size="4x"
-              className="Lightbulb"
-            />
+
+          <div className="myAttributes">
+            <div className="icons">
+              <FontAwesomeIcon icon={faRocket} size="4x" className="Rocket" />
+            </div>
+            <p className="tagline">Dynamic</p>
+            <p className="description"> Websites don't have to be static, I love making pages come to life.</p>
           </div>
-          <div className="icons">
-            <FontAwesomeIcon icon={faRocket} size="4x" className="Rocket" />
+
+          <div className="myAttributes">
+            <div className="icons">
+              <FontAwesomeIcon icon={faBath} size="4x" className="Bath" />
+            </div>
+            <p className="tagline">Clean</p>
+            <p className="description">All my code is easy to read and takes moments to understand.</p>
           </div>
-          <div className="icons">
-            <FontAwesomeIcon icon={faBath} size="4x" className="Bath" />
-          </div>
-        </div>
-        <div className="textTitle">
-          <div className="responsive">Responsive</div>
-          <div className="intuitive">Intuitive</div>
-          <div className="dynamic">Dynamic</div>
-          <div className="clean">Clean</div>
-        </div>
-        <div className="rowflex">
-          <div className="descriptionresponsive">
-            <p className="responsivetext">
-              My layouts will work on any device, big or small.
-            </p>
-          </div>
-          <div className="descriptionintuitive">
-            <p className="intuitivetext">
-              Strong preference for easy to use, intuitive UX/UI. Websites don't
-              have to be static, I love making pages come to life.
-            </p>
-          </div>
-          <div className="descriptiondynamic">
-            <p className="textdynamic">
-              Websites don't have to be static, I love making pages come to
-              life.
-            </p>
-          </div>
-          <div className="descriptionclean">
-            <p className="textclean">
-              All my code is easy to read and takes moments to understand.
-            </p>
-          </div>
+
         </div>
       </div>
     );

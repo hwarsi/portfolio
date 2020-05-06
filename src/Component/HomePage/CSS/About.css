@@ -1,8 +1,40 @@
+.aboutMeBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.aboutMe {
+  font-size: 50px;
+  color: rgb(255, 7, 110);
+  padding-top: 30px;
+}
+
+.aboutText {
+    max-width: 600px;
+    font-size: 20px;
+}
+
 .aboutBackground {
   width: 100vw;
   height: 700px;
   background-color: rgb(204, 189, 170);
   margin-top: -246px;
+}
+
+.attributeContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.myAttributes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .icons {
@@ -11,8 +43,6 @@
   background: #8a868e;
   border-radius: 50%;
   margin-top: 30px;
-  margin-right: 130px;
-  margin-left: 120px;
 }
 
 .Rocket {
@@ -35,93 +65,19 @@
   margin-left: 23px;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
+.myAttributes p {
+  text-align: center;
 }
 
-.textTitle {
-  display: flex;
-  flex-direction: row;
-}
-
-.responsive {
+.tagline {
   margin-top: 10px;
-  margin-right: 100px;
-  margin-left: 125px;
   font-size: 20px;
   font-weight: bolder;
 }
 
-.intuitive {
-  margin-top: 10px;
-  margin-right: 100px;
-  margin-left: 173px;
-  font-size: 20px;
-  font-weight: bolder;
-}
-
-.dynamic {
-  margin-top: 10px;
-  margin-right: 100px;
-  margin-left: 193px;
-  font-size: 20px;
-  font-weight: bolder;
-}
-
-.clean {
-  margin-top: 10px;
-  margin-right: 60px;
-  margin-left: 195px;
-  font-size: 20px;
-  font-weight: bolder;
-}
-
-.descriptionresponsive {
+.description {
   width: 180px;
   word-break: normal;
   margin-top: 10px;
-  margin-left: 100px;
-}
-
-.descriptionintuitive {
-  width: 180px;
-  word-break: normal;
-  margin-top: 10px;
-  margin-left: 162px;
-}
-
-.descriptiondynamic {
-  width: 180px;
-  word-break: normal;
-  margin-right: 250px;
-  margin-top: 10px;
-  margin-left: 203px;
-}
-
-.descriptionclean {
-  width: 180px;
-  word-break: normal;
-  margin-left: -85px;
-  margin-top: 10px;
-}
-
-.rowflex {
-  display: flex;
-  flex-direction: row;
-}
-
-.profiletext {
-  width: 900px;
-  word-break: normal;
-  margin-left: 300px;
-  font-size: 23px;
-}
-
-.aboutMe {
-  margin-left: 630px;
-  font-size: 50px;
-  margin-top: -100px;
-  color: rgb(255, 7, 110);
-  padding-top: 30px;
+  height: 30px;
 }
