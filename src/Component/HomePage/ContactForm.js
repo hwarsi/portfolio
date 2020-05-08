@@ -105,71 +105,77 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <div className="backgroundContact">
+      <div>
         <h1 className="ContactMeTitle">Contact Me!</h1>
-        <img src={postman} className="postman"></img>
-        <div className="boxs">
-          <Popconfirm
-            title="Are you sure delete this task?"
-            visible={this.state.visible}
-            onVisibleChange={this.handleVisibleChange}
-            onConfirm={this.confirm}
-            onCancel={this.cancel}
-            okText="Yes"
-            cancelText="No"
-          ></Popconfirm>
-          <Form
-            {...layout}
-            name="nest-messages"
-            validateMessages={validateMessages}
-          >
-            <Form.Item
-              name={["user", "name"]}
-              label=""
-              rules={[
-                {
-                  required: false,
-                },
-              ]}
+        <div className="backgroundContact">
+          <div className="boxs">
+            <Popconfirm
+              title="Are you sure delete this task?"
+              visible={this.state.visible}
+              onVisibleChange={this.handleVisibleChange}
+              onConfirm={this.confirm}
+              onCancel={this.cancel}
+              okText="Yes"
+              cancelText="No"
+            ></Popconfirm>
+            <Form
+              {...layout}
+              name="nest-messages"
+              validateMessages={validateMessages}
             >
-              {" "}
-              <div>
-                <div className="inline" className="contactNameFrom">
-                  {" "}
-                  Name:
+              <Form.Item
+                name={["user", "name"]}
+                label=""
+                rules={[
+                  {
+                    required: false,
+                  },
+                ]}
+              >
+                {" "}
+                <div>
+                  <div className="inline" className="contactNameFrom">
+                    {" "}
+                    Name:
+                  </div>
+                  <Input onChange={this.getTextName} className="length" />
                 </div>
-                <Input onChange={this.getTextName} className="length" />
-              </div>
-            </Form.Item>
-            <Form.Item
-              name={["user", "email"]}
-              rules={[
-                {
-                  type: "",
-                },
-              ]}
-            >
-              {" "}
-              <div>
-                <div className="inline"> Email:</div>
-                <Input onChange={this.getTextEmail} className="length" />
-              </div>
-            </Form.Item>
-            <Form.Item name={["user", "introduction"]} label="">
-              <div className="inline">
-                <div> Description:</div>
-                <Input.TextArea
-                  onChange={this.getTextDescription}
-                  className="lengths"
-                />
-              </div>
-            </Form.Item>
-            <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-              <Button type="primary" htmlType="submit" onClick={this.sendInfo}>
-                Submit
-              </Button>
-            </Form.Item>
-          </Form>
+              </Form.Item>
+              <Form.Item
+                name={["user", "email"]}
+                rules={[
+                  {
+                    type: "",
+                  },
+                ]}
+              >
+                {" "}
+                <div>
+                  <div className="inline"> Email:</div>
+                  <Input onChange={this.getTextEmail} className="length" />
+                </div>
+              </Form.Item>
+              <Form.Item name={["user", "introduction"]} label="">
+                <div className="inline">
+                  <div> Description:</div>
+                  <Input.TextArea
+                    onChange={this.getTextDescription}
+                    className="lengths"
+                  />
+                </div>
+              </Form.Item>
+              <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  onClick={this.sendInfo}
+                >
+                  Submit
+                </Button>
+                <img src={postman} className="postman"></img>
+              </Form.Item>
+            </Form>
+          </div>
         </div>
       </div>
     );

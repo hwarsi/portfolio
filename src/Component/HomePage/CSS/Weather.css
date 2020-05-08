@@ -10,9 +10,13 @@
 
 .dayWeather {
   font-size: 25px;
+  display: flex;
+  flex-direction: row;
 }
 
 .iconWeather {
+  display: flex;
+  flex-direction: row;
 }
 
 .temperature {
@@ -21,65 +25,34 @@
 }
 
 .weatherDescription {
-}
-
-.key1 .key2 .key3 {
   display: flex;
   flex-direction: row;
 }
 
-.key1 {
-  margin-left: 70px;
-}
-
-.key2 {
-  margin-left: 220px;
-  margin-top: -223px;
-}
-
-.key3 {
-  margin-left: 348px;
-  margin-top: -223px;
-}
-
-.key4 {
-  margin-left: 470px;
-  margin-top: -223px;
-}
-
-.key5 {
-  margin-left: 590px;
-  margin-top: -222px;
-}
-
-.key6 {
-  margin-left: 725px;
-  margin-top: -222px;
-}
-
-.key7 {
-  margin-left: 840px;
-  margin-top: -222px;
-}
-
 .weatherLocatation {
-  margin-left: 680px;
-  margin-top: -15px;
   color: rgb(255, 7, 110);
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .weatherTitle {
-  margin-left: 690px;
   font-size: 40px;
   color: rgb(255, 7, 110);
+  text-align: center;
 }
 
 .widgetBackground {
   border-radius: 18px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-  margin-left: 220px;
   width: 1050px;
   height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   background-image: url("../../../Photos/Videos/backgroundweather.jpeg");
+}
+
+.centerWeather {
+  justify-content: center;
+  display: flex;
 }

@@ -215,15 +215,17 @@ class Weather extends Component {
       <div className="weatherBackground">
         <h1 className="weatherTitle">Weather</h1>
         <h1 className="weatherLocatation">Greenville, SC</h1>
-        <div className="widgetBackground">
-          {this.state.weatherInfo.map((item) => (
-            <div className={item.key} id="key">
-              <div className="dayWeather">{item.day}</div>
-              <div className="iconWeather">{item.icon}</div>
-              <div className="temperature">{item.temperature} &#8457;</div>
-              <div className="weatherDescription">{item.weather}</div>
-            </div>
-          ))}
+        <div className="centerWeather">
+          <div className="widgetBackground">
+            {this.state.weatherInfo.map((item) => (
+              <div id="key">
+                <div className="dayWeather">{item.day}</div>
+                <div className="iconWeather">{item.icon}</div>
+                <div className="temperature">{item.temperature} &#8457;</div>
+                <div className="weatherDescription">{item.weather}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );

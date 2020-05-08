@@ -15,10 +15,13 @@ class Education extends Component {
           <div className="universityname">Clemson University</div>
           <div className="location">Clemson, SC</div>
           <div className="degree">B.S Economics</div>
+        </div>
+        <div className="centerBox">
           <div className="classes">
             <div className="classTitle">Relevant Classes</div>
-            <img src={clemson} className="clemsonImage"></img>
-
+            <div className="centerImage">
+              <img src={clemson} className="clemsonImage"></img>
+            </div>
             <div className="engineeringClasses">
               Calculus 1, Calculus 2,Calculus 3, Intro to Data Structures and
               Algorithms, Engineering Graphics and machine design, Linear

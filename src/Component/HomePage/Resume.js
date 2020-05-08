@@ -69,22 +69,26 @@ class Resume extends Component {
   render() {
     return (
       <div className="backgroundResume">
-        <h1 className="Resume">Work Experience</h1>
-        {this.state.Jobs.map((item) => (
-          <div id={item.card}>
-            <img src={item.image} id="card-image"></img>
-            <div className="Company">{item.Company}</div>
-            <div id="card-text">
-              <span id="date">{item.date}</span>
-              <h2>{item.Job}</h2>
-              {item.description.map((items) => (
-                <ul>
-                  <li>{items}</li>
-                </ul>
-              ))}
+        <div className="experience">Experience</div>
+
+        <div className="WholeCard">
+          {this.state.Jobs.map((item) => (
+            <div className="allCards">
+              <img src={item.image} id="card-image"></img>
+              <div className="Company">{item.Company}</div>
+              <div id="card-text">
+                <div className="pushDateDown"></div>
+                <span id="date">{item.date}</span>
+                <h2>{item.Job}</h2>
+                {item.description.map((items) => (
+                  <ul>
+                    <li>{items}</li>
+                  </ul>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     );
   }

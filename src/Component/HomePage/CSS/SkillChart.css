@@ -2,17 +2,22 @@
   font-family: roboto;
   text-align: center;
   width: 1019px;
-  height: 500px;
+  height: 480px;
   background-color: white;
   padding-left: 30px;
   padding-right: 60px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  padding-top: 30px;
+  border-radius: 18px;
+  background-image: url("../../../Photos/Videos/blackbackground.jpeg");
 }
 
 .wrapeverything {
   background-color: rgb(165, 165, 158);
-  padding-left: 229px;
-  padding-top: 100px;
-  padding-bottom: 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 100px;
 }
 
 .wrapper h1 {
@@ -101,8 +106,20 @@
 }
 
 .skillChartTitle {
-  padding-left: 430px;
-  margin-right: 10px;
   font-size: 300%;
   color: rgb(255, 7, 110);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+  color: white;
 }

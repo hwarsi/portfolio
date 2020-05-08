@@ -8,7 +8,6 @@
 }
 
 .Title {
-  margin-left: 10px;
 }
 
 .boxs {
@@ -20,20 +19,19 @@
   text-align: center;
   height: 375px;
   width: 700px;
-  margin-left: 425px;
   background-color: blanchedalmond;
 }
 
 .backgroundContact {
   width: 100vw;
   height: 650px;
+  display: flex;
+  justify-content: center;
 }
 
 .postman {
   width: 100px;
   height: 100px;
-  margin-left: 1020px;
-  margin-bottom: -700px;
 }
 
 .contactNameFrom {
@@ -41,7 +39,7 @@
 }
 
 .ContactMeTitle {
-  margin-left: 660px;
   font-size: 300%;
   color: rgb(255, 7, 110);
+  text-align: center;
 }
