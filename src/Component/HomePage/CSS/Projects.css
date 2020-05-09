@@ -1,6 +1,6 @@
 .backgroundProjects {
   width: 100vw;
-  height: 900px;
+  height: 1100px;
   background-color: rgb(75, 87, 109);
 }
 
@@ -8,35 +8,33 @@
 }
 
 .ProjectTitle {
-  margin-left: 700px;
   font-size: 50px;
   color: rgb(255, 7, 110);
+  text-align: center;
 }
 
 .DevSpotTitle {
+  font-size: 50px;
 }
 
 .howDevSpot {
-  font-size: 20px;
-  margin-left: 50px;
+  font-size: 35px;
   margin-bottom: 20px;
 }
 
 .Portfolio {
-  margin-left: 650px;
+  font-size: 50px;
 }
 
 .DevSpot {
 }
 
 .DevSpotDescription {
-  width: 400px;
+  width: 600px;
   word-break: normal;
 }
 
 .portfolioSection {
-  margin-left: 990px;
-  margin-top: -270px;
 }
 
 .PortfolioDesription {
@@ -45,26 +43,40 @@
 .DevSpotImage {
   width: 475px;
   height: 350px;
-  margin-left: 110px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  border-radius: 18px;
 }
 .differentTitles {
   display: flex;
-  margin-left: 300px;
   font-size: 15px;
+  justify-content: space-evenly;
   font-weight: bolder;
 }
 
 .DevGroupDescription {
-  margin-left: 190px;
 }
 
 .ProfileHow {
-  font-size: 20px;
+  font-size: 35px;
+  margin-bottom: 10px;
 }
 
 .portfolioImage {
-  margin-left: 930px;
-  margin-top: -350px;
   width: 475px;
   height: 350px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  border-radius: 18px;
+}
+
+.projectImages {
+  justify-content: space-evenly;
+  display: flex;
+  margin-top: 40px;
+}
+
+.allDescriptions {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  font-size: 23px;
 }

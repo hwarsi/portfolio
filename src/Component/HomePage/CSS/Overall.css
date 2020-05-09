@@ -4,7 +4,7 @@
 .backgroundResume {
   background-color: darkslategrey;
   width: 100vw;
-  height: 1800px;
+  max-height: 1800px;
 }
 .Resume {
   padding-top: 60px;
@@ -86,7 +86,7 @@
 }
 
 .experience {
-  font-size: 40px;
+  font-size: 50px;
   color: rgb(255, 7, 110);
   text-align: center;
   padding-top: 30px;

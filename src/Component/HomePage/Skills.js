@@ -19,45 +19,13 @@ class Skills extends Component {
   render() {
     return (
       <div className="skillsBackground">
-        <div className="boxSkills">
-          <h1 className="frontendtool">Frontend Tools</h1>
-          <div className="frontend">
-            <div className="skill">
-              <img id="html" src={html} />
-            </div>
-            <div className="skill">
-              <img id="css" src={css} />
-            </div>
-            <div className="skill">
-              <img id="jquery" src={jquery} />
-            </div>
-            <div className="skill">
-              <img id="javascript" src={javascript} />
-            </div>
-            <div className="skill">
-              <img id="react" src={Reacts} />
-            </div>
-          </div>
-          <h1 className="backendtool">Backend Tools</h1>
-          <div className="backend">
-            <div className="skill">
-              <img id="python" src={python} />
-            </div>
-            <div className="skill">
-              <img id="flask" src={flask} />
-            </div>
-            <div className="skill">
-              <img id="mongodb" src={mongodb} />
-            </div>
-            <div className="skill">
-              <img id="sql" src={SQL} />
-            </div>
-          </div>
-          <h1 className="otherToolTitle">Other Tools</h1>
-          <div className="otherTools">
-            <img id="github" src={Github} />
-          </div>
-        </div>
+        <figure id="slider">
+          <img src={html} id="html"></img>
+          <img src={css} id="css"></img>
+          <img src={jquery} id="jquery"></img>
+          <img src={javascript} id="javascript"></img>
+          <img src={Reacts} id="react"></img>
+        </figure>
       </div>
     );
   }

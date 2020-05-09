@@ -11,7 +11,7 @@ class Introduction extends Component {
       <div className="banner">
         <video autoPlay muted loop id="video">
           <source
-            src="https://storage.coverr.co/videos/eE026x1b6h1v01p001I9O2zflmESo00zMR01s?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTg4NjE4ODAyfQ.LuJvkWPSvZlHsaRP_iCse8-pgCK5rTZFUGW9bANnTdY"
+            src="https://assets.mixkit.co/videos/preview/mixkit-matterhorn-mountain-landscape-4281-large.mp4"
             type="video/mp4"
             style={{ height: "100px" }}
           ></source>

@@ -1,35 +1,3 @@
-.skillsBackground {
-  padding-top: 30px;
-  background-color: rgb(24, 70, 70);
-  width: 100vw;
-  height: 750px;
-}
-
-.frontendtool {
-  display: flex;
-  font-size: 400%;
-  font-weight: 900;
-  color: rgb(255, 7, 110);
-  justify-content: center;
-}
-
-.backendtool {
-  display: flex;
-  font-size: 400%;
-  font-weight: 900;
-  justify-content: center;
-  color: rgb(255, 7, 110);
-}
-
-.otherToolTitle {
-  display: flex;
-  font-size: 400%;
-  font-weight: 900;
-  justify-content: center;
-
-  color: rgb(255, 7, 110);
-}
-
 #html {
   display: flex;
   width: 100px;
@@ -117,32 +85,22 @@
   justify-content: space-evenly;
   width: 95%;
   align-items: center;
-  font-size: 35px;
 }
 
-.backend {
-  display: flex;
-  font-size: 400%;
-  font-weight: 900;
-  justify-content: space-evenly;
-  color: rgb(255, 7, 110);
-  width: 95%;
+#slider figure {
+  position: relative;
+  margin: 0;
+  left: 0;
+  width: 500%;
+  animation: 20s slider infinite;
 }
 
-.otherTools {
-  display: flex;
-
-  justify-content: center;
+#slider figure img {
+  width: 20%;
+  float: left;
+  height: auto;
 }
 
-.slidershow {
-  width: 1024px;
-  height: 768px;
-  width: 1024px;
-  height: 768;
-  margin: 100px auto;
-  animation: slide 20s infinite;
-}
 @keyframes slider {
   0% {
     left: 0;
@@ -173,15 +131,42 @@
   }
 }
 
-#slider {
-  overflow: hidden;
+.sliderDimensions {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
 }
 
-#slider figure img {
-  float: left;
+.sliderBackground {
+  padding-top: 30px;
+  background-color: rgb(24, 70, 70);
+  width: 100vw;
+  height: 600px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.frontendTools {
+  text-align: center;
+  padding-top: 200px;
 }
 
-#slider figure {
-  position: relative;
-  animation: 20s slider infinite;
+.backendSliderDimensions {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-items: center;
+}
+
+.SkillsTitle {
+  text-align: center;
+  font-size: 50px;
+}
+
+.backgroundAll {
+  background-color: rgb(24, 70, 70);
 }

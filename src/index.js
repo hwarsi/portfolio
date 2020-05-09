@@ -10,16 +10,15 @@ import Education from "./Component/HomePage/Education";
 import Introduction from "./Component/HomePage/Introduction";
 import About from "./Component/HomePage/About";
 import Projects from "./Component/HomePage/Projects";
-
+import SkillsSlider from "./Component/HomePage/SkillsSlider";
 ReactDOM.render(
   <div>
     <Introduction />
     <About />
     <Resume />
     <SkillChart />
-    <Skills />
+    <SkillsSlider />
     <Projects />
-    <Education />
     <Weather />
     <ContactForm />
   </div>,
