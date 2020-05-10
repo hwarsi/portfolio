@@ -1,8 +1,8 @@
 .aboutMeBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .aboutMe {
@@ -12,15 +12,17 @@
 }
 
 .aboutText {
-    max-width: 600px;
-    font-size: 20px;
+  max-width: 600px;
+  font-size: 20px;
+  color: #a4d792;
 }
 
 .aboutBackground {
   width: 100vw;
-  height: 700px;
-  background-color: rgb(204, 189, 170);
+  background-color: #424141;
   margin-top: -246px;
+  max-height: 3000px;
+  height: 700px;
 }
 
 .attributeContainer {
@@ -37,6 +39,10 @@
   align-items: center;
 }
 
+.myAttributes p {
+  color: #a4d792;
+}
+
 .icons {
   width: 120px;
   height: 120px;
@@ -48,21 +54,25 @@
 .Rocket {
   margin-top: 30px;
   margin-left: 25px;
+  color: #fafaf6;
 }
 
 .Lightbulb {
   margin-top: 30px;
   margin-left: 38px;
+  color: #fafaf6;
 }
 
 .Bath {
   margin-top: 30px;
   margin-left: 33px;
+  color: #fafaf6;
 }
 
 .Laptop {
   margin-top: 30px;
   margin-left: 23px;
+  color: #fafaf6;
 }
 
 .myAttributes p {
@@ -80,4 +90,9 @@
   word-break: normal;
   margin-top: 10px;
   height: 30px;
+  color: #a4d792;
+}
+
+.maxheight {
+  height: 800px;
 }

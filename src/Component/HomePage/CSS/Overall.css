@@ -74,7 +74,6 @@
 }
 
 .WholeCard {
-  padding-top: 80px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -87,7 +86,7 @@
 
 .experience {
   font-size: 50px;
-  color: rgb(255, 7, 110);
+  color: #f7fdb6;
   text-align: center;
   padding-top: 30px;
 }

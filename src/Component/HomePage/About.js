@@ -27,21 +27,30 @@ class About extends Component {
           </p>
         </div>
         <div className="attributeContainer">
-
           <div className="myAttributes">
             <div className="icons">
               <FontAwesomeIcon icon={faLaptop} size="4x" className="Laptop" />
             </div>
             <p className="tagline">Responsive</p>
-            <p className="description"> My layouts will work on any device, big or small.</p>
-          </div>  
+            <p className="description">
+              {" "}
+              My layouts will work on any device, big or small.
+            </p>
+          </div>
 
           <div className="myAttributes">
             <div className="icons">
-              <FontAwesomeIcon icon={faLightbulb} size="4x" className="Lightbulb"/>
+              <FontAwesomeIcon
+                icon={faLightbulb}
+                size="4x"
+                className="Lightbulb"
+              />
             </div>
             <p className="tagline">Intuitive</p>
-            <p className="description">Strong preference for easy to use, intuitive UX/UI. Websites don't have to be static, I love making pages come to life.</p>
+            <p className="description">
+              Strong preference for easy to use, intuitive UX/UI. Websites don't
+              have to be static, I love making pages come to life.
+            </p>
           </div>
 
           <div className="myAttributes">
@@ -49,7 +58,11 @@ class About extends Component {
               <FontAwesomeIcon icon={faRocket} size="4x" className="Rocket" />
             </div>
             <p className="tagline">Dynamic</p>
-            <p className="description"> Websites don't have to be static, I love making pages come to life.</p>
+            <p className="description">
+              {" "}
+              Websites don't have to be static, I love making pages come to
+              life.
+            </p>
           </div>
 
           <div className="myAttributes">
@@ -57,9 +70,10 @@ class About extends Component {
               <FontAwesomeIcon icon={faBath} size="4x" className="Bath" />
             </div>
             <p className="tagline">Clean</p>
-            <p className="description">All my code is easy to read and takes moments to understand.</p>
+            <p className="description">
+              All my code is easy to read and takes moments to understand.
+            </p>
           </div>
-
         </div>
       </div>
     );

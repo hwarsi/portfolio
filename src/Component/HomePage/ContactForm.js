@@ -105,7 +105,7 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="backgroundContactForm">
         <h1 className="ContactMeTitle">Contact Me!</h1>
         <div className="backgroundContact">
           <div className="boxs">

@@ -79,7 +79,7 @@ class Resume extends Component {
               <div id="card-text">
                 <div className="pushDateDown"></div>
                 <span id="date">{item.date}</span>
-                <h2>{item.Job}</h2>
+                <h2 className="jobs">{item.Job}</h2>
                 {item.description.map((items) => (
                   <ul>
                     <li>{items}</li>

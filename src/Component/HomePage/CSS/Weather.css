@@ -1,5 +1,5 @@
 .weatherBackground {
-  background-color: rgb(7, 61, 61);
+  background-color: darkslategrey;
   width: 100vw;
   height: 500px;
   color: black;
@@ -30,14 +30,14 @@
 }
 
 .weatherLocatation {
-  color: rgb(255, 7, 110);
+  color: #f7fdb6;
   margin-bottom: 30px;
   text-align: center;
 }
 
 .weatherTitle {
   font-size: 50px;
-  color: rgb(255, 7, 110);
+  color: #f7fdb6;
   text-align: center;
 }
 

@@ -23,8 +23,6 @@
 }
 
 .backgroundContact {
-  width: 100vw;
-  height: 650px;
   display: flex;
   justify-content: center;
 }
@@ -40,6 +38,12 @@
 
 .ContactMeTitle {
   font-size: 50px;
-  color: rgb(255, 7, 110);
+  color: #21825c;
   text-align: center;
+}
+
+.backgroundContactForm {
+  background-color: #424141;
+  width: 100vw;
+  height: 600px;
 }
