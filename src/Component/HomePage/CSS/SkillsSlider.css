@@ -142,7 +142,7 @@
 
 .sliderBackground {
   padding-top: 30px;
-  background-color: rgb(24, 70, 70);
+  background-color: #7aa5d2;
   width: 100vw;
   height: 600px;
   display: flex;
@@ -151,7 +151,7 @@
 .frontendTools {
   text-align: center;
   padding-top: 200px;
-  color: #f7fdb6;
+  color: #303841;
 }
 
 .backendSliderDimensions {
@@ -166,9 +166,9 @@
 .SkillsTitle {
   text-align: center;
   font-size: 50px;
-  color: #f7fdb6;
+  color: #303841;
 }
 
 .backgroundAll {
-  background-color: rgb(24, 70, 70);
+  background-color: #7aa5d2;
 }

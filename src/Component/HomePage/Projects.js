@@ -13,7 +13,7 @@ class Projects extends Component {
       <div className="backgroundProjects">
         <h1 className="ProjectTitle">Projects</h1>
         <div className="differentTitles">
-          <h1 className="DevSpotTitle">DevSpot</h1>
+          <h1 className="DevSpotTitle">Social Media App</h1>
           <h1 className="Portfolio">Portfolio</h1>
         </div>
         <div className="projectImages">

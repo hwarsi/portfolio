@@ -11,7 +11,7 @@ class Introduction extends Component {
       <div className="banner">
         <video autoPlay muted loop id="video">
           <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-matterhorn-mountain-landscape-4281-large.mp4"
+            src="https://assets.mixkit.co/videos/preview/mixkit-waves-crash-on-the-shore-1078-large.mp4"
             type="video/mp4"
             style={{ height: "100px" }}
           ></source>
