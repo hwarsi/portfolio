@@ -1,11 +1,7 @@
 .weatherBackground {
   background-color: #7aa5d2;
-  width: 100vw;
   height: 500px;
   color: black;
-}
-
-.weatherFormat {
 }
 
 .dayWeather {

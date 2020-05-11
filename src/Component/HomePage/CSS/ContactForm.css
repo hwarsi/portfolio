@@ -7,8 +7,6 @@
   height: 1px;
 }
 
-.Title {
-}
 
 .boxs {
   color: rgb(255, 7, 110);
@@ -44,6 +42,5 @@
 
 .backgroundContactForm {
   background-color: #eeeeee;
-  width: 100vw;
   height: 600px;
 }
