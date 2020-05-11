@@ -31,4 +31,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `python app.py`
 
-Runs the app in virtual enviorment to get weather data and to send contact information to database.
+Create virutal enviroment to run flask.
+Go to Python_Api folder in terminal.
+Enter `python app.py` to run virtual enviroment.
+Now you can get weather data and to send contact information to database.
