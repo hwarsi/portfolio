@@ -29,6 +29,6 @@ Create route to get weather data.
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### python app.py
+### `python app.py`
 
 Runs the app in virtual enviorment to get weather data and to send contact information to database.
