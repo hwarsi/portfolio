@@ -40,8 +40,8 @@ class Projects extends Component {
                 posts being posted or deleted.
               </li>
               <li className="DevSpotDescription">
-                Created a notificaton feauture where users will be alerted if a
-                users posts on their wall or requests to add them as a user.
+                Created a notification feature where users will be alerted if a
+                user posts on their wall or requests to add them as a friend.
               </li>
               <li className="DevSpotDescription">
                 Used OAuth 2.0 to authenticate users.
