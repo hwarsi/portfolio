@@ -34,7 +34,8 @@ class About extends Component {
             <p className="tagline">Responsive</p>
             <p className="description">
               {" "}
-              My layouts will work on any device, big or small.
+              I strive to build my web applications to be responsive using tools
+              like Flebox and Grid CSS.
             </p>
           </div>
 
@@ -48,8 +49,8 @@ class About extends Component {
             </div>
             <p className="tagline">Intuitive</p>
             <p className="description">
-              Strong preference for easy to use, intuitive UX/UI. Websites don't
-              have to be static, I love making pages come to life.
+              Aiming to learn solid principles of UX design, for easy user
+              accessiblity.
             </p>
           </div>
 

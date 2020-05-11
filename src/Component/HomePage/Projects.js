@@ -46,7 +46,6 @@ class Projects extends Component {
               <li className="DevSpotDescription">
                 Used OAuth 2.0 to authenticate users.
               </li>
-              <li className="DevSpotDescription">Used CSS for formatting.</li>
             </div>
           </div>
           <div className="portfolioSection">
@@ -60,7 +59,9 @@ class Projects extends Component {
             <li className="PortfolioDesription">
               Used Python and Axios to add contact info to MongoDB.{" "}
             </li>
-            <li className="PortfolioDesription">Used CSS for formatting. </li>
+            <li className="PortfolioDesription">
+              Deployed application to google cloud
+            </li>
           </div>
         </div>
       </div>
