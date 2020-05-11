@@ -3,3 +3,5 @@ __pycache__
 mongodb-macos-x86_64-4.2.3
 build
 node_modules
+.env
+Python-Api/.env

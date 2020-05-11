@@ -18,7 +18,7 @@ class Weather extends Component {
   }
 
   componentWillMount() {
-    let URL = "http://127.0.0.1:5000/weather";
+    let URL = `${process.env.REACT_APP_BACKEND_URL}/weather`;
     let HEADERS = {
       "Access-Control-Allow-Origin": "*",
       authorization: "sdjfjdskfj45j4ekj",
