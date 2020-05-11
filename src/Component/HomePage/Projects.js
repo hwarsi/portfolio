@@ -60,7 +60,7 @@ class Projects extends Component {
               Used Python and Axios to add contact info to MongoDB.{" "}
             </li>
             <li className="PortfolioDesription">
-              Deployed application to google cloud
+              Deployed application to google cloud.
             </li>
           </div>
         </div>
