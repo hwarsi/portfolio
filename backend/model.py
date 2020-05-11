@@ -2,6 +2,7 @@ from pymongo import MongoClient
 import os
 
 MONGO_CONNECT_URL = os.environ['MONGO_CONNECT_URL']
+print(MONGO_CONNECT_URL)
 
 def connectToDB():
     #Connects to the Mongo App
