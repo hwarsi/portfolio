@@ -35,7 +35,7 @@ class Resume extends Component {
             "Developed back end services using Python (Flask), MongoDB for our databases.",
             "Held weekly meetings with clients to share status reports on current development.",
             "Created marketing strategy for BoxDrop Furniture Anderson that yielded a 45% increase in sales in two months.",
-            "Worked in an Agile Scrum Team creating complex webpages for our existing clients.",
+            "Worked in an Agile Scrum Team creating web apps for our existing clients.",
           ],
         },
         {
