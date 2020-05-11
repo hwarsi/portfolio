@@ -53,7 +53,7 @@ class Resume extends Component {
         {
           card: "card3",
           Job: "Purchasing Engineer",
-          date: "January 2019 - May 2019",
+          date: "January 2018 - May 2018",
           Company: "Bosch Rexroth",
           image: engineering,
           description: [
