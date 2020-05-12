@@ -12,4 +12,6 @@ app.get('/', function(req, res) {
   console.log(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(9000);
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT);
