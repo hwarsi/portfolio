@@ -1,10 +1,6 @@
 runtime: nodejs
 env: flex
 
-# This sample incurs costs to run on the App Engine flexible environment.
-# The settings below are to reduce costs during testing and are not appropriate
-# for production use. For more information, see:
-# https://cloud.google.com/appengine/docs/flexible/nodejs/configuring-your-app-with-app-yaml
 manual_scaling:
   instances: 1
 
@@ -14,8 +10,8 @@ resources:
   disk_size_gb: 10
 
 handlers:
-  -url: /
+  - url: /
     static_files: build/index.html
     upload: build/index.html
-  -url: /
+  - url: /
     static_dir: build
