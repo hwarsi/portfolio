@@ -13,6 +13,10 @@ CORS(app)
 
 WEATHER_ID = os.environ['WEATHER_API_ID']
 
+@app.route("/test",  methods=['GET', 'POST']) 
+def test():
+    return jsonify('Welcome to test route...')
+
 @app.route("/weather",  methods=['GET', 'POST']) 
 def weather():
     
