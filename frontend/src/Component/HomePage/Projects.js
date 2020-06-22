@@ -14,7 +14,6 @@ class Projects extends Component {
         <h1 className="SectionTitle">Projects</h1>
 
         <div className="Projects">
-
           <div className="ProjectBox">
             <h1 className="ProjectTitle">Social Media App</h1>
             <img src={DevSpot} className="ProjectImage"></img>
@@ -22,21 +21,16 @@ class Projects extends Component {
               <div className="ProjectTagline">How was it built?</div>
               <ul>
                 <li className="ProjectDescription">
-                  Used Restful APIs to get users data.
+                  Used React to create Functional Components.
                 </li>
                 <li className="ProjectDescription">
-                  Used React to create functional Components.
+                  Created functions to perform CRUD operations to update MongoDB
+                  database.
                 </li>
                 <li className="ProjectDescription">
-                  Use python routes and axios to utilize API's data.
-                </li>
-                <li className="ProjectDescription">
-                  Used GET and POST to update MongoDB data base on comments and
-                  posts being posted or deleted.
-                </li>
-                <li className="ProjectDescription">
-                  Created a notification feature where users will be alerted if a
-                  user posts on their wall or requests to add them as a friend.
+                  Created a notification feature where users will be alerted if
+                  a user posts on their wall or requests to add them as a
+                  friend.
                 </li>
                 <li className="ProjectDescription">
                   Used OAuth 2.0 to authenticate users.
@@ -66,9 +60,7 @@ class Projects extends Component {
               </ul>
             </div>
           </div>
-
         </div>
-
       </div>
     );
   }
